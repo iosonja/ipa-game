@@ -7,5 +7,8 @@ Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta p
 - [x] Viikko 1: Git-harjoittelu
    - [gitlog.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
    - [komentorivi.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
-   - Muistiinpanoja:<br>
-     `git add -p`: tarjoaa pikakatsauksen tehtyihin muutoksiin
+
+
+#### Muistiinpanoja:<br>
+  **Viikko 1**
+- `git add -p`: tarjoaa pikakatsauksen tehtyihin muutoksiin
