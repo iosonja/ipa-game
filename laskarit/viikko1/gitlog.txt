@@ -1,3 +1,5 @@
+Viikon 1 git-harjoitustehtävä:
+
 commit 0674cb7fbb99059980620532ec76474e78fd6004
 Author: Sonja Ek <sonja3k@icloud.com>
 Date:   Tue Mar 16 16:04:05 2021 +0200
