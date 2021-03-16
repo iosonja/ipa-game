@@ -12,3 +12,4 @@ Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta p
 #### Muistiinpanoja:<br>
   **Viikko 1**
 - `git add -p`: tarjoaa pikakatsauksen tehtyihin muutoksiin
+testi
