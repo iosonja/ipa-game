@@ -4,6 +4,8 @@ Tämä repositorio on luotu Helsingin yliopiston Ohjelmistotekniikka-kurssin teh
 Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta projektityön muodossa.
 
 #### Tehdyt tehtävät
-[x] Viikko 1: git-harjoittelu
-   - Käteviä komentoja:<br>
+- [x] Viikko 1: Git-harjoittelu
+   - [gitlog.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
+   - [komentorivi.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
+   - Muistiinpanoja:<br>
      `git add -p`: tarjoaa pikakatsauksen tehtyihin muutoksiin
