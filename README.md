@@ -16,6 +16,16 @@ Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta p
    - [ ] 2.6 Screenshot
 
 ---
-### Muistiinpanoja<br>
+### Muistiinpanoja
 #### Viikko 1
 - `git add -p`: tarjoaa pikakatsauksen tehtyihin muutoksiin
+
+---
+### Ohjeita
+#### Kurssimateriaali
+- [Gitin peruskäyttö](https://ohjelmistotekniikka-hy.github.io/viikko1)
+- [Poetry ja riippuvuuksien hallinta](https://ohjelmistotekniikka-hy.github.io/python/poetry)
+- [Unittest ja testaaminen](https://ohjelmistotekniikka-hy.github.io/python/unittest)
+
+#### Hyödyllisiä linkkejä
+- [Learn Git Branching](https://learngitbranching.js.org)
