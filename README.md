@@ -4,8 +4,16 @@ Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta p
 
 #### Tehdyt tehtävät
 - Viikko 1: Git-harjoittelu
-   - [x] [gitlog.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
-   - [x] [komentorivi.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
+   - [x] 1.1 [gitlog.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
+   - [x] 1.2 [komentorivi.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
+
+- Viikko 2: Automaattinen testaus
+   - [x] 2.1 unittest
+   - [ ] 2.2 Testit kortille
+   - [ ] 2.3 Testikattavuus
+   - [ ] 2.4 Kassapäätteen testit
+   - [ ] 2.5 Haarautumakattavuus
+   - [ ] 2.6 Screenshot
 
 ---
 ### Muistiinpanoja<br>
