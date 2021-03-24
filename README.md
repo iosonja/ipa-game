@@ -8,12 +8,12 @@ Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta p
    - [x] 1.2 [komentorivi.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
 
 - Viikko 2: Automaattinen testaus
-   - [x] 2.1 [unittest](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/src/tests/maksukortti_test.py)
-   - [x] 2.2 [unicafe](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/unicafe/src/tests/maksukortti_test.py)
-   - [ ] 2.3 Testikattavuus
-   - [ ] 2.4 Kassapäätteen testit
-   - [ ] 2.5 Haarautumakattavuus
-   - [ ] 2.6 Screenshot
+   - [x] 2.1 [unittest: alkeet](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/src/tests/maksukortti_test.py)
+   - [x] 2.2 [unicafe: maksukortin yksikkötestit](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/unicafe/src/tests/maksukortti_test.py)
+   - [x] 2.3 coverage-harjoittelu
+   - [x] 2.4 [unicafe: kassapäätteen yksikkötestit](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/unicafe/src/tests/kassapaate_test.py)
+   - [x] 2.5 kattavuusraportin luonti
+   - [x] 2.6 [screenshot testikattavuusraportista](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/coverage_report_unicafe.png)
 
 ---
 ### Muistiinpanoja
