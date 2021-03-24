@@ -42,18 +42,3 @@ class Kassapaate:
             self.kassassa_rahaa += summa
         else:
             return
-
-    # The Internet tells me that there should be @property here, but the 
-    # function doesn't work when it's included
-    def kassassa_rahaa(self):
-        return self.kassassa_rahaa
-
-    def edulliset(self):
-        return self.edulliset
-
-    def maukkaat(self):
-        return self.maukkaat
-
-    # This function was here before I bothered to write the getter methods above
-    # def __str__(self):
-    #     return f"r:{self.kassassa_rahaa}, e:{self.edulliset}, m:{self.maukkaat}"
