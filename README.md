@@ -2,6 +2,8 @@
 Tämä repositorio on luotu Helsingin yliopiston Ohjelmistotekniikka-kurssin tehtävien palautusta varten.
 Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta projektityön muodossa.
 
+[Linkki tuntikirjanpitoon](https://github.com/iosonja/ot-harjoitustyo/tree/main/doc)
+
 #### Tehdyt tehtävät
 - Viikko 1: Git
    - [x] 1.1 [gitlog.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
@@ -14,16 +16,6 @@ Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta p
    - [x] 2.4 [unicafe: kassapäätteen yksikkötestit](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/unicafe/src/tests/kassapaate_test.py)
    - [x] 2.5 kattavuusraportin luonti
    - [x] 2.6 [screenshot testikattavuusraportista](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/coverage_report_unicafe.png)
-
----
-### Muistiinpanoja
-#### Viikko 1: Git
-- `git add -p`: tarjoaa pikakatsauksen tehtyihin muutoksiin
-
-#### Viikko 2: Automaattinen testaus
-- Testikattavuutta voidaan mitata:
-   - Rivikattavuus: mitä koodirivejä testien suorittaminen on tutkinut.
-   - Haarautumakattavuus: mitä eri suoritushaaroja koodista on käyty läpi. Käytännöllisempi mittari kuin rivikattavuus.
 
 ---
 ### Ohjeita
