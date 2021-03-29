@@ -1,7 +1,7 @@
 # Product Requirements Document
 
 ## Purpose of the app
-The app is a game for learning and revising the classification of International Phonetic Alphabets (IPS).
+The app is a game for learning and revising the classification of International Phonetic Alphabets (IPA).
 
 ## Users
 The app has one user type, a basic user, who can play the game and not modify the contents.
@@ -26,10 +26,10 @@ The user is expected to try and make the character bubbles disappear before they
 ## Further development
 After the most basic version, here are some features to be added to the game:
 - Place of articulation added to the classification requirements
-- More varied types of IPA characters: besides pulmonic consonants, there are also 
+- More varied types of IPA characters: in addition to pulmonic consonants, there are also 
   - non-pulmonic consonants
   - vowels
   - diacritics
-  - suprasegmentals
+  - suprasegmentals.
 - Scoring system
 - Top scores list
