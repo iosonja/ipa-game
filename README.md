@@ -2,9 +2,10 @@
 Tämä repositorio on luotu Helsingin yliopiston Ohjelmistotekniikka-kurssin tehtävien palautusta varten.
 Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta projektityön muodossa.
 
-[Linkki tuntikirjanpitoon](https://github.com/iosonja/ot-harjoitustyo/tree/main/doc)
+[Linkki tuntikirjanpitoon](https://github.com/iosonja/ot-harjoitustyo/tree/main/doc)<br>
+[Linkki määrittelydokumenttiin](https://github.com/iosonja/ot-harjoitustyo/blob/main/doc/requirements-document.md)
 
-#### Tehdyt tehtävät
+#### Tehdyt laskaritehtävät
 - Viikko 1: Git
    - [x] 1.1 [gitlog.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
    - [x] 1.2 [komentorivi.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
