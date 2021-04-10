@@ -2,28 +2,21 @@
 Tämä repositorio on luotu Helsingin yliopiston Ohjelmistotekniikka-kurssin tehtävien palautusta varten.
 Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta projektityön muodossa.
 
-#### Tehdyt tehtävät
+[Linkki tuntikirjanpitoon](https://github.com/iosonja/ot-harjoitustyo/tree/main/doc)<br>
+[Linkki määrittelydokumenttiin](https://github.com/iosonja/ot-harjoitustyo/blob/main/doc/requirements-document.md)
+
+#### Tehdyt laskaritehtävät
 - Viikko 1: Git
    - [x] 1.1 [gitlog.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
    - [x] 1.2 [komentorivi.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
 
 - Viikko 2: Automaattinen testaus
-   - [x] 2.1 [unittest](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/src/tests/maksukortti_test.py)
-   - [x] 2.2 [unicafe](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/unicafe/src/tests/maksukortti_test.py)
-   - [ ] 2.3 Testikattavuus
-   - [ ] 2.4 Kassapäätteen testit
-   - [ ] 2.5 Haarautumakattavuus
-   - [ ] 2.6 Screenshot
-
----
-### Muistiinpanoja
-#### Viikko 1: Git
-- `git add -p`: tarjoaa pikakatsauksen tehtyihin muutoksiin
-
-#### Viikko 2: Automaattinen testaus
-- Testikattavuutta voidaan mitata:
-   - Rivikattavuus: mitä koodirivejä testien suorittaminen on tutkinut.
-   - Haarautumakattavuus: mitä eri suoritushaaroja koodista on käyty läpi. Käytännöllisempi mittari kuin rivikattavuus.
+   - [x] 2.1 [unittest: alkeet](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/src/tests/maksukortti_test.py)
+   - [x] 2.2 [unicafe: maksukortin yksikkötestit](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/unicafe/src/tests/maksukortti_test.py)
+   - [x] 2.3 coverage-harjoittelu
+   - [x] 2.4 [unicafe: kassapäätteen yksikkötestit](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/unicafe/src/tests/kassapaate_test.py)
+   - [x] 2.5 kattavuusraportin luonti
+   - [x] 2.6 [screenshot testikattavuusraportista](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/coverage_report_unicafe.png)
 
 ---
 ### Ohjeita
