@@ -18,6 +18,12 @@ Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta p
    - [x] 2.5 kattavuusraportin luonti
    - [x] 2.6 [screenshot testikattavuusraportista](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/coverage_report_unicafe.png)
 
+- Viikko 3: UML-kaaviot
+   - [x] 3.1 [Luokkakaavio, osa 1](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko3/tehtava_1.png)
+   - [x] 3.2 [Luokkakaavio, osa 2](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko3/tehtava_2.png)
+   - [x] 3.3 [Sekvenssikaavio: Moottori](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko3/tehtava_3.png)
+   - [x] 3.4 [Sekvenssikaavio: HSL](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko3/tehtava_4.png)
+
 ---
 ### Ohjeita
 #### Kurssimateriaali
