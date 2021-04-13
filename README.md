@@ -1,4 +1,4 @@
-# IPA Game
+# IPA Game [![wakatime](https://wakatime.com/badge/github/iosonja/ot-harjoitustyo.svg)](https://wakatime.com/badge/github/iosonja/ot-harjoitustyo)<br>
 The app offers a gamified way to learn the International Phonetic Alphabet symbols.
 
 ## How to use the app
