@@ -1,36 +1,23 @@
-# Ohjelmistotekniikka kevät 2021
-Tämä repositorio on luotu Helsingin yliopiston Ohjelmistotekniikka-kurssin tehtävien palautusta varten.
-Kurssin aikana on tarkoitus harjoitella ohjelmiston suunnittelua ja toteutusta projektityön muodossa.
+# IPA Game
+The app offers a gamified way to learn the International Phonetic Alphabet symbols.
 
-[Linkki tuntikirjanpitoon](https://github.com/iosonja/ot-harjoitustyo/tree/main/doc)<br>
-[Linkki määrittelydokumenttiin](https://github.com/iosonja/ot-harjoitustyo/blob/main/doc/requirements-document.md)
+### How to use the app
+1. Install dependencies with the command:
+```
+poetry install
+```
+2. Start the app with the command:
+```
+poetry run invoke start
+```
 
-#### Tehdyt laskaritehtävät
-- Viikko 1: Git
-   - [x] 1.1 [gitlog.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
-   - [x] 1.2 [komentorivi.txt](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
+### Command line operations for developers
+Start the app: `poetry run invoke start`
+Run tests: `poetry run invoke test`
+Create a test coverage report: `poetry run invoke coverage-report`
 
-- Viikko 2: Automaattinen testaus
-   - [x] 2.1 [unittest: alkeet](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/src/tests/maksukortti_test.py)
-   - [x] 2.2 [unicafe: maksukortin yksikkötestit](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/unicafe/src/tests/maksukortti_test.py)
-   - [x] 2.3 coverage-harjoittelu
-   - [x] 2.4 [unicafe: kassapäätteen yksikkötestit](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/unicafe/src/tests/kassapaate_test.py)
-   - [x] 2.5 kattavuusraportin luonti
-   - [x] 2.6 [screenshot testikattavuusraportista](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko2/coverage_report_unicafe.png)
+### Documentation
 
-- Viikko 3: UML-kaaviot
-   - [x] 3.1 [Luokkakaavio, osa 1](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko3/tehtava_1.png)
-   - [x] 3.2 [Luokkakaavio, osa 2](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko3/tehtava_2.png)
-   - [x] 3.3 [Sekvenssikaavio: Moottori](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko3/tehtava_3.png)
-   - [x] 3.4 [Sekvenssikaavio: HSL](https://github.com/iosonja/ot-harjoitustyo/blob/main/laskarit/viikko3/tehtava_4.png)
+[Requirements Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/doc/requirements-document.md)<br>
+[Time tracking](https://github.com/iosonja/ot-harjoitustyo/tree/main/doc)<br>
 
----
-### Ohjeita
-#### Kurssimateriaali
-- [Gitin peruskäyttö](https://ohjelmistotekniikka-hy.github.io/viikko1)
-- [Poetry ja riippuvuuksien hallinta](https://ohjelmistotekniikka-hy.github.io/python/poetry)
-- [Unittest ja testaaminen](https://ohjelmistotekniikka-hy.github.io/python/unittest)
-- [Coverage ja testikattavuus](https://ohjelmistotekniikka-hy.github.io/python/coverage)
-
-#### Hyödyllisiä linkkejä
-- [Learn Git Branching](https://learngitbranching.js.org)
