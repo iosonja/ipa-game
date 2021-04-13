@@ -9,12 +9,24 @@ win = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("IPA game")
 
 bubble_radius = 25
-x = 0
-y = 150
+# Bubble's coordinates:
+x_bubble = 0
+y_bubble = 150
 velocity = 5
 
+# button = pygame.rect.Rect(176, 134, 30, 30)
+button_width  = 60
+button_height = 25
+x_button = 10
+y_button = screen_height - button_height
+button_dragged = False
+
+# Scores: when this reaches the number of alphabets in the game, the player wins.
+score = 0
+NBR_OF_ALPHABETS = 20 # Change later
 run = True
 bubble_is_stopped = False
+
 while run:
     pygame.time.delay(100)
 
@@ -26,13 +38,21 @@ while run:
 
     if keys[pygame.K_SPACE]:
         bubble_is_stopped = not bubble_is_stopped
+        
     if not bubble_is_stopped:
-        x += velocity
-    if x >= screen_width + bubble_radius:
-        pygame.quit()
+        x_bubble += velocity
+
+    if x_bubble >= screen_width + bubble_radius:
+        # The bubble has reached the right end. Some punishment will be added here.
+        pygame.quit() # Remove this later
+
+    if score >= NBR_OF_ALPHABETS:
+        # The player has won. Add a banner asking if the player wants to play again.
+        pygame.quit() # Remove this later
 
     win.fill((212, 220, 255))
-    pygame.draw.circle(win, (144, 122, 214), (x, y), bubble_radius)
+    pygame.draw.circle(win, (144, 122, 214), (x_bubble, y_bubble), bubble_radius) # bubble
+    pygame.draw.rect(win, (79, 81, 140), (x_button, y_button, button_width, button_height), 3) # button
     pygame.display.update()
 
 
