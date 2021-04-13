@@ -14,16 +14,23 @@ x_bubble = 0
 y_bubble = 150
 velocity = 5
 
-# button = pygame.rect.Rect(176, 134, 30, 30)
+
+# ----- Button creation -----
 button_width  = 60
 button_height = 25
 x_button = 10
 y_button = screen_height - button_height
-button_dragged = False
 
-# Scores: when this reaches the number of alphabets in the game, the player wins.
+button = Button(x_button, y_button, False)
+# ----- End Button creation -----
+
+# ----- Scores section ------
+# when this reaches the number of alphabets in the game, the player wins.
 score = 0
 NBR_OF_ALPHABETS = 20 # Change later
+
+# ----- End scores section -----
+
 run = True
 bubble_is_stopped = False
 
