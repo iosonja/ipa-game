@@ -5,6 +5,8 @@
 | 29/3/2021 | 1               | Ideating the app                          |
 |           | 1               | Designing the UI + requirements           |
 | 10/4/2021 | 1               | Getting to know Pygame                    |
-| 13/4/2021 | 1               | Writing code                              |
-|           | 1               | Configuring the project                   |
-|  **all**  | 8               |                                           |
+| 13/4/2021 | 2               | Writing code                              |
+|           | 2               | Configuring the project                   |
+|           | 1               | Writing automated tests                   |
+|           | 1               | Documentation                             |
+|  **all**  | 12              |                                           |
