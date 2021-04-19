@@ -17,7 +17,8 @@ poetry run invoke start
 Start the app: `poetry run invoke start`<br>
 Run tests: `poetry run invoke test`<br>
 Create a test coverage report: `poetry run invoke coverage-report`<br>
-The covarage report will be created in a repository called _htmlcov_.
+The covarage report will be created in a repository called _htmlcov_.<br>
+Analyze static code quality with pylint: `poetry run invoke lint`
 
 ## Documentation
 
