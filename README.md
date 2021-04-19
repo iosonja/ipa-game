@@ -14,11 +14,28 @@ poetry run invoke start
 ```
 
 ## Command line operations for developers
-Start the app: `poetry run invoke start`<br>
-Run tests: `poetry run invoke test`<br>
-Create a test coverage report: `poetry run invoke coverage-report`<br>
-The covarage report will be created in a repository called _htmlcov_.<br>
-Analyze static code quality with pylint: `poetry run invoke lint`
+Start the app:
+```
+poetry run invoke start
+```
+Run tests:
+```
+poetry run invoke test
+```
+Create a test coverage report:
+```
+poetry run invoke coverage-report
+```
+>The covarage report will be created in a repository called _htmlcov_.
+>
+Analyze static code quality with pylint:
+```
+poetry run invoke lint
+```
+Reformat the code using autopep8:
+```
+poetry run invoke format
+```
 
 ## Documentation
 
