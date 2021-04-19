@@ -1,9 +1,9 @@
 class Button:
-    def __init__(self, x, y, isBeingDragged):
+    def __init__(self, x, y, is_being_dragged):
         self.x = x
         self.y = y
-        self.isBeingDragged = isBeingDragged
-    
+        self.is_being_dragged = is_being_dragged
+
     def move_right(self):
         self.x += 1
 
@@ -17,4 +17,4 @@ class Button:
         self.y -= 1
 
     def toggle_dragging(self):
-        self.isBeingDragged = not self.isBeingDragged
+        self.is_being_dragged = not self.is_being_dragged
