@@ -2,13 +2,12 @@ import pygame
 
 
 class Renderer:
-    def __init__(self, window, width, background_color):
-        self._WINDOW = window
-        self._SCREEN_WIDTH = width
-        self._BACKGROUND_COLOR = background_color
+    def __init__(self, window, background_color):
+        self._window = window
+        self._background_color = background_color
 
-    def redraw(self, x_bubble, y_bubble, radius):
-            self._WINDOW.fill(self._BACKGROUND_COLOR)
-            pygame.draw.circle(self._WINDOW, (144, 122, 214), (x_bubble,
-                            y_bubble), radius)
-            pygame.display.update()
+    def redraw(self, bubble_color, x_bubble, y_bubble, bubble_radius):
+        self._window.fill(self._background_color)
+        pygame.draw.circle(self._window, bubble_color, (x_bubble,
+                                                        y_bubble), bubble_radius)
+        pygame.display.update()

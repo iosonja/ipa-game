@@ -1,36 +1,37 @@
+
+import sys
 import pygame
-from renderer import Renderer
+
 
 class GameLoop:
-    def __init__(self, window, width, renderer):
-        self._WINDOW = window
-        self._SCREEN_WIDTH = width
-        self._RENDERER = renderer
-
+    def __init__(self, window, screen_width, renderer):
+        self._window = window
+        self._screen_width = screen_width
+        self._renderer = renderer
 
     def start(self):
-        BUBBLE_RADIUS = 25
-        # Bubble's coordinates:
         x_bubble = 0
         y_bubble = 150
-        VELOCITY = 5
+        bubble_radius = 25
+        bubble_color = (144, 122, 214)
+        velocity = 5
 
         while True:
             pygame.time.delay(100)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    exit()
+                    sys.exit()  # Better that just exit() bc no dialogue created
 
             #  keys = pygame.key.get_pressed()
 
-            x_bubble += VELOCITY
+            x_bubble += velocity
 
-            if x_bubble >= self._SCREEN_WIDTH + BUBBLE_RADIUS:
+            if x_bubble >= self._screen_width + bubble_radius:
                 # The bubble has reached the right end. Some punishment will be added here.
                 pygame.quit()  # Remove this later
 
-            self._RENDERER.redraw(x_bubble, y_bubble, BUBBLE_RADIUS)
-
+            self._renderer.redraw(bubble_color, x_bubble,
+                                  y_bubble, bubble_radius)
 
         pygame.quit()
