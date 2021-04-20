@@ -1,6 +1,6 @@
 import sys
-import pygame
 from random import randrange
+import pygame
 from bubble import Bubble
 
 
@@ -43,7 +43,7 @@ class GameLoop:
                 bubble_is_moving = False
 
             if bubble.x_position >= self._screen_width + bubble_radius:
-                # The bubble has reached the right end. Some punishment will be 
+                # The bubble has reached the right end. Some punishment will be
                 # added here.
                 bubble.move(-(self._screen_width + bubble_radius))  # Start over
 

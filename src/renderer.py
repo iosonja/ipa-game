@@ -1,12 +1,10 @@
 import pygame
 
 
-class Textbox(object):
+class Textbox:
     def __init__(self, window):
         self.font = pygame.font.SysFont('Arial', 20)
         self._window = window
-
-    def add_box(self):
         self.rect = pygame.draw.rect(self._window, (0,0,0), (0, 0, 1000, 100), 1)
 
     def add_text(self):
@@ -28,6 +26,5 @@ class Renderer:
         pygame.draw.circle(self._window, bubble_color, (x_bubble,
                                                         y_bubble), bubble_radius)
         textbox = Textbox(self._window)
-        textbox.add_box()
         textbox.add_text()
         pygame.display.update()
