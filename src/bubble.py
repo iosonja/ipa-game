@@ -6,7 +6,7 @@ class Bubble:
         self._color = color
         self._renderer = renderer
 
-    def move_forward(self, amount):
+    def move(self, amount):
         self.x_position += amount
 
     def rerender(self):
