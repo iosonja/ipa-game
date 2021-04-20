@@ -1,10 +1,11 @@
 import pygame
-
+from renderer import Renderer
 
 class GameLoop:
-    def __init__(self, window, width):
+    def __init__(self, window, width, renderer):
         self._WINDOW = window
         self._SCREEN_WIDTH = width
+        self._RENDERER = renderer
 
 
     def start(self):
@@ -29,9 +30,7 @@ class GameLoop:
                 # The bubble has reached the right end. Some punishment will be added here.
                 pygame.quit()  # Remove this later
 
-            self._WINDOW.fill((212, 220, 255))
-            pygame.draw.circle(self._WINDOW, (144, 122, 214), (x_bubble,
-                            y_bubble), BUBBLE_RADIUS)
-            pygame.display.update()
+            self._RENDERER.redraw(x_bubble, y_bubble, BUBBLE_RADIUS)
+
 
         pygame.quit()
