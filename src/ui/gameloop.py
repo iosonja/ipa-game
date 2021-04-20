@@ -1,7 +1,7 @@
 import sys
 from random import randrange
 import pygame
-from bubble import Bubble
+from ui.bubble import Bubble
 
 
 class GameLoop:

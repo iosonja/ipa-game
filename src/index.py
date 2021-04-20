@@ -1,6 +1,6 @@
 import pygame
-from renderer import Renderer
-from gameloop import GameLoop
+from ui.renderer import Renderer
+from ui.gameloop import GameLoop
 
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 500
