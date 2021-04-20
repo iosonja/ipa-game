@@ -10,5 +10,7 @@
 | 19/4/2021 | 1         | Adding pylint and autopep8 |
 |           | 1         | Documentation              |
 | 20/4/2021 | 2         | Source code refactoring    |
-|           | 1         | Documentation              |
-|  **all**  | 17        |                            |
+|           | 2         | Coding new UI functionality|
+|           | 1         | Automated testing          |
+|           | 2         | Architecture documentation |
+|  **all**  | **21**    |                            |
