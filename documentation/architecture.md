@@ -1,1 +1,1 @@
-![IPAgame_class_diagram-new-2](https://user-images.githubusercontent.com/40118812/115452275-e3d86a00-a226-11eb-802e-725bbffd5806.png)
+![IPAgame_class_diagram-new-3](https://user-images.githubusercontent.com/40118812/115455490-b1c90700-a22a-11eb-8559-eb4f5056ffe1.png)
