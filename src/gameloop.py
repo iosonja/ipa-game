@@ -1,6 +1,6 @@
-
 import sys
 import pygame
+from bubble import Bubble
 
 
 class GameLoop:
@@ -16,6 +16,8 @@ class GameLoop:
         bubble_color = (144, 122, 214)
         velocity = 5
 
+        bubble = Bubble(x_bubble, y_bubble, bubble_radius, bubble_color, self._renderer)
+
         while True:
             pygame.time.delay(100)
 
@@ -25,13 +27,12 @@ class GameLoop:
 
             #  keys = pygame.key.get_pressed()
 
-            x_bubble += velocity
+            bubble.move_forward(velocity)
 
-            if x_bubble >= self._screen_width + bubble_radius:
+            if bubble.x_position >= self._screen_width + bubble_radius:
                 # The bubble has reached the right end. Some punishment will be added here.
                 pygame.quit()  # Remove this later
 
-            self._renderer.redraw(bubble_color, x_bubble,
-                                  y_bubble, bubble_radius)
+            bubble.rerender()
 
         pygame.quit()
