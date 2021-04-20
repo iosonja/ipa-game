@@ -23,15 +23,23 @@ class GameLoop:
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+                    pygame.display.quit()
+                    pygame.quit()
                     sys.exit()  # Better that just exit() bc no dialogue created
 
-            #  keys = pygame.key.get_pressed()
+            bubble.move(velocity)
 
-            bubble.move_forward(velocity)
+            keys = pygame.key.get_pressed()
+
+            if keys[pygame.K_x]:
+                pygame.display.quit()
+                pygame.quit()
+                sys.exit()
+
 
             if bubble.x_position >= self._screen_width + bubble_radius:
                 # The bubble has reached the right end. Some punishment will be added here.
-                pygame.quit()  # Remove this later
+                bubble.move(-self._screen_width + bubble_radius)  # Start over
 
             bubble.rerender()
 
