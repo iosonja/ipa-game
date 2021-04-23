@@ -11,6 +11,16 @@ class GameLoop:
         self._renderer = renderer
 
     def start(self):
+        symbols = ["f", "v", "θ", "ð", "z", "ʃ", "ʒ", "h", "p", "b", "t",
+                   "d", "k", "g", "ʈʃ", "dʒ", "m", "n", "ŋ", "r", "j", "w", "l", "ɫ"]
+        classes = {
+            "fricative": ["f", "v", "θ", "ð", "z", "ʃ", "ʒ", "h"],
+            "plosive": ["p", "b", "t", "d", "k", "g"],
+            "affricate": ["ʈʃ", "dʒ"],
+            "nasal": ["m", "n", "ŋ"],
+            "approximant": ["r", "j", "w", "l", "ɫ"]
+        }
+
         colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
 
         x_bubble = 0
@@ -20,7 +30,8 @@ class GameLoop:
         velocity = 5
         bubble_is_moving = True
 
-        bubble = Bubble(x_bubble, y_bubble, bubble_radius, bubble_color, self._renderer)
+        bubble = Bubble(x_bubble, y_bubble, bubble_radius,
+                        bubble_color, self._renderer)
 
         while True:
             pygame.time.delay(100)
@@ -44,7 +55,8 @@ class GameLoop:
             if bubble.x_position >= self._screen_width + bubble_radius:
                 # The bubble has reached the right end. Some punishment will be
                 # added here.
-                bubble.move(-(self._screen_width + bubble_radius))  # Start over
+                # Start over
+                bubble.move(-(self._screen_width + bubble_radius))
 
             if bubble_is_moving:
                 bubble.move(velocity)
