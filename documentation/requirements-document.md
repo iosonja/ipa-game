@@ -1,7 +1,7 @@
 # Product Requirements Document
 
 ## Purpose of the app
-The app is a game for learning and revising the classification of International Phonetic Alphabets (IPA).
+The app offers a gamified way to learn to classify the International Phonetic Alphabet symbols used in consonants that appear in the English language.
 
 ## Users
 The app has one user type, a basic user, who can play the game and not modify the contents.
@@ -26,13 +26,12 @@ The user is expected to try and make the character bubbles disappear before they
 - [Done] The bubbles move at a steady pace. 
 - There is only a certain number of characters and after all of them have been correctly classified, the game ends.
 - [Done] In the first versions of the game, classification happens according to bubble color, which is randomized.
-- In the next versions of the game there are symbols of pulmonic consonants in the bubbles, and categorization only happens for the manner of articulation (leaving out the place of articulation).
+- In the next versions of the game there are symbols of consonants in the bubbles, and categorization happens based on the manner of articulation.
 
 ## Further development
 After the most basic version, here are some features to be added to the game:
 - Place of articulation added to the classification requirements
-- More varied types of IPA characters: in addition to pulmonic consonants, there are also 
-  - non-pulmonic consonants
+- More varied types of IPA characters: in addition to consonants, there are also 
   - vowels
   - diacritics
   - suprasegmentals.

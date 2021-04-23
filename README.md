@@ -1,5 +1,5 @@
 # IPA Game [![wakatime](https://wakatime.com/badge/github/iosonja/ot-harjoitustyo.svg)](https://wakatime.com/badge/github/iosonja/ot-harjoitustyo)<br>
-The app offers a gamified way to learn the International Phonetic Alphabet symbols.
+The app offers a gamified way to learn to classify the International Phonetic Alphabet symbols used in consonants that appear in the English language.
 
 ## How to use the app
 The app has been built using Python version 3.6.0. Versions below that may not work as expected.
