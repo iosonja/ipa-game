@@ -16,5 +16,5 @@
 | 23/4/2021 | 1         | Add IPA classification data|
 | 27/4/2021 | 1         | Learn about separation of concerns |
 |           | 2         | Refactor                           |
-|           | 1         | Improve game functionality         |
+|           | 2         | Code new features                  |
 |  **all**  | **26**    |                            |
