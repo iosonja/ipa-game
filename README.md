@@ -4,6 +4,8 @@ In the current version of the game, the classification is done for colors.
 When the app has been finalized, the player needs to classify symbols of the International Phonetic Alphabet (IPA).
 The symbols that appear in the game will describe consonants that appear in the English language.
 
+[Release for week 5](https://github.com/iosonja/ot-harjoitustyo/releases/tag/viikko5)
+
 ## How to use the app
 The app has been built using Python version 3.6.0. Versions below that may not work as expected.
 
@@ -18,7 +20,7 @@ poetry run invoke start
 
 ### Instructions for playing the current version
 Try to stop each bubble from reaching the right edge of the screen. The bubble disappears when its color has been classified correctly with a keystroke.
-There are only five different colors, because they are only a temporary basis for classification. Currently the game won't end before you quit the program for example by pressing the X key.
+There are only five different colors, because they are only a temporary basis for classification. Currently the game won't end before you quit the program by pressing the X key.
 #### Keystrokes by color:
 ```
 R - red
