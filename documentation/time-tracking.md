@@ -15,4 +15,6 @@
 |           | 2         | Architecture documentation |
 | 23/4/2021 | 1         | Add IPA classification data|
 | 27/4/2021 | 1         | Learn about separation of concerns |
-|  **all**  | **23**    |                            |
+|           | 2         | Refactor                           |
+|           | 1         | Improve game functionality         |
+|  **all**  | **26**    |                            |
