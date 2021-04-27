@@ -15,7 +15,8 @@
 |           | 2         | Architecture documentation |
 | 23/4/2021 | 1         | Add IPA classification data|
 | 27/4/2021 | 1         | Learn about separation of concerns |
-|           | 2         | Refactor                           |
+|           | 2         | Refactoring                        |
 |           | 2         | Code new features                  |
 |           | 1         | Writing automated tests            |
-|  **all**  | **27**    |                            |
+|           | 2         | Documentation                      |
+|  **all**  | **30**    |                            |
