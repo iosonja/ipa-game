@@ -7,7 +7,7 @@ The app offers a gamified way to learn to classify the International Phonetic Al
 The app has one user type, a basic user, who can play the game and not modify the contents.
 
 ## User Interface
-- [x] [Done] There is one view for the game: the playing view.
+#### There is one view for the game: the playing view.
 
 ![IPA-game_ui](https://user-images.githubusercontent.com/40118812/112819372-3346d280-908d-11eb-8f7b-9a0442a7f18c.png)
 
@@ -22,6 +22,7 @@ The user is expected to try and make the character bubbles disappear before they
 - [x] [Done] The bubble can be classified with a keystroke in the early versions.
 - [ ] In later versions, classification happens with mouse dragging.
 - [x] [Done] If the category is correct, the bubble disappears.
+- [x] [Done] If the category is correct, a new bubble appears from the left side.
 - [x] [Done] If the category is correct, scores increase by 10.
 - [x] [Done] If the category is incorrect, the bubble continues floating.
 - [x] [Done] If the category is incorrect, scores decrease by 2.
