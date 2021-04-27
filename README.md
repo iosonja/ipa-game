@@ -17,6 +17,8 @@ poetry install
 ```
 poetry run invoke start
 ```
+>Starting the game may take several seconds in the current version.
+>
 
 ### Instructions for playing the current version
 Try to stop each bubble from reaching the right edge of the screen. The bubble disappears when its color has been classified correctly with a keystroke.
