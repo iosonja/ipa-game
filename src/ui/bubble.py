@@ -20,4 +20,5 @@ class Bubble:
         self.x_position += amount
 
     def rerender(self):
-        self._renderer.redraw(self._color, self.x_position, self.y_position, self._radius)
+        self._renderer.redraw(self._color, self.x_position,
+                              self.y_position, self._radius)
