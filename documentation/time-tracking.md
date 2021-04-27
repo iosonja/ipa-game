@@ -13,4 +13,6 @@
 |           | 2         | Coding new UI functionality|
 |           | 1         | Automated testing          |
 |           | 2         | Architecture documentation |
-|  **all**  | **21**    |                            |
+| 23/4/2021 | 1         | Add IPA classification data|
+| 27/4/2021 | 1         | Learn about separation of concerns |
+|  **all**  | **23**    |                            |
