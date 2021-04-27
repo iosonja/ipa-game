@@ -39,7 +39,8 @@ class GameLoop:
                 self._scores.decrease(1)
                 return True
 
-            if event.type == pygame.QUIT:
+            # The following stopped working for some reason, will fix later
+            elif event.type == pygame.QUIT:
                 return False
 
             return True
