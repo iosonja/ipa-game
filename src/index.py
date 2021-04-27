@@ -2,7 +2,7 @@ import pygame
 from ui.renderer import Renderer
 from ui.gameloop import GameLoop
 
-SCREEN_WIDTH = 1000
+SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 500
 BACKGROUND_COLOR = (212, 220, 255)
 

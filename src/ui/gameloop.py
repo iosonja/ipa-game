@@ -25,7 +25,7 @@ class GameLoop:
 
         x_bubble = 0
         y_bubble = 150
-        bubble_radius = 25
+        bubble_radius = 50
         bubble_color = colors[randrange(3)]
         velocity = 5
         bubble_is_moving = True
