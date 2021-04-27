@@ -1,5 +1,4 @@
 import sys
-from random import randrange
 import pygame
 from ui.bubble import Bubble
 
@@ -10,37 +9,27 @@ class GameLoop:
         self._window_width = window_width
         self._renderer = renderer
         self._event_queue = event_queue
-        self._bubble_is_moving = True
+        self._bubble = Bubble(self._renderer)
 
     def start(self):
-        colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
-
-        x_bubble = 0
-        y_bubble = 150
-        bubble_radius = 50
-        bubble_color = colors[randrange(3)]
         velocity = 5
 
-        bubble = Bubble(x_bubble, y_bubble, bubble_radius,
-                        bubble_color, self._renderer)
-
         while True:
-            if self._handle_events(bubble) == False:
+            if self._handle_events(self._bubble) == False:
                 break
 
-            pygame.time.delay(100)
+            pygame.time.delay(60)
 
-
-            if bubble.x_position >= self._window_width + bubble_radius:
+            if self._bubble.x >= self._window_width + self._bubble.radius:
                 # The bubble has reached the right end. Some punishment will be
                 # added here.
 
                 # Temporary action: Start over
-                bubble.move(-(self._screen_width + bubble_radius))
+                self._bubble.move(-(self._screen_width + self._bubble.radius))
 
-            if self._bubble_is_moving:
-                bubble.move(velocity)
-                bubble.rerender()
+            if self._bubble.is_moving:
+                self._bubble.move(velocity)
+                self._bubble.rerender()
 
         pygame.quit()
 
@@ -49,8 +38,8 @@ class GameLoop:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_x:
                     return False
-                elif event.key == bubble.key:
-                    self._bubble_is_moving = False
+                elif event.key == self._bubble.key:
+                    self._bubble.is_moving = False
                 else:
                     return True
             elif event.type == pygame.QUIT:
