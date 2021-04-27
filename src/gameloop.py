@@ -1,4 +1,3 @@
-import sys
 import pygame
 from ui.bubble import Bubble
 
@@ -16,9 +15,9 @@ class GameLoop:
         velocity = 5
 
         while True:
-            if self._handle_events() == False:
+            if self._handle_events() is False:
                 break
-            elif self._bubble.x >= self._window_width + self._bubble.radius:
+            if self._bubble.x >= self._window_width + self._bubble.radius:
                 self._bubble = Bubble(self._renderer)
 
             pygame.time.delay(60)
@@ -32,12 +31,15 @@ class GameLoop:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_x:
                     return False
-                elif event.key == self._bubble.key:
+                if event.key == self._bubble.key:
                     self._scores.increase(10)
                     self._bubble = Bubble(self._renderer)
                     return True
-                else:
-                    self._scores.decrease(1)
-                    return True
-            elif event.type == pygame.QUIT:
+
+                self._scores.decrease(1)
+                return True
+
+            if event.type == pygame.QUIT:
                 return False
+
+            return True
