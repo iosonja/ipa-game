@@ -11,6 +11,7 @@ class Bubble:
         self.key = self.define_key(self._color)
         self._renderer = renderer
         self.is_moving = True
+        print("New bubble was initialized")
 
     def randomize_color(self):
         red = (255, 0, 0)

@@ -5,5 +5,8 @@ class Scores:
     def increase(self, amount):
         self.number += amount
 
+    def decrease(self, amount):
+        self.number -= amount
+
     def make_zero(self):
         self.number = 0
