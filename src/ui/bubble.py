@@ -6,11 +6,10 @@ class Bubble:
     def __init__(self, renderer):
         self.radius = 50
         self.x = -self.radius
-        self.y = randrange(30, 300)  # make bubbles appear from random heights
+        self.y = randrange(80, 300)  # make bubbles appear from random heights
         self._color = self.randomize_color()[randrange(5)]
         self.key = self.define_key(self._color)
         self._renderer = renderer
-        self.is_moving = True
         print("New bubble was initialized")
 
     def randomize_color(self):
@@ -24,6 +23,7 @@ class Bubble:
         return colors
 
     def define_key(self, color):
+        # Change the color codes to natural language later (e.g. with a dict)
         if color == (255, 0, 0):
             return pygame.K_r
         elif color == (0, 255, 0):
@@ -41,6 +41,3 @@ class Bubble:
     def rerender(self):
         self._renderer.redraw(self._color, self.x,
                               self.y, self.radius)
-
-    def toggle_movement(self):
-        self.is_moving = not self.is_moving

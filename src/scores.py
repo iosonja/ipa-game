@@ -6,7 +6,7 @@ class Scores:
         self.number += amount
 
     def decrease(self, amount):
-        self.number -= amount
-
-    def make_zero(self):
-        self.number = 0
+        if self.number - amount > 0:
+            self.number -= amount
+        else:
+            self.number = 0

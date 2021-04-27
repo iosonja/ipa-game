@@ -18,15 +18,12 @@ class GameLoop:
         while True:
             if self._handle_events() == False:
                 break
-
-            pygame.time.delay(60)
-
-            if self._bubble.x >= self._window_width + self._bubble.radius:
+            elif self._bubble.x >= self._window_width + self._bubble.radius:
                 self._bubble = Bubble(self._renderer)
 
-            if self._bubble.is_moving:
-                self._bubble.move(velocity)
-                self._bubble.rerender()
+            pygame.time.delay(60)
+            self._bubble.move(velocity)
+            self._bubble.rerender()
 
         pygame.quit()
 

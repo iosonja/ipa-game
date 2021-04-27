@@ -1,9 +1,10 @@
 import unittest
 import pygame
-from  gameloop import GameLoop
+from gameloop import GameLoop
 from scores import Scores
 from ui.renderer import Renderer
 from event_queue import EventQueue
+
 
 class TestEventQueue(unittest.TestCase):
     def setUp(self):
