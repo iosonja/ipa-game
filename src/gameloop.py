@@ -21,11 +21,7 @@ class GameLoop:
             pygame.time.delay(60)
 
             if self._bubble.x >= self._window_width + self._bubble.radius:
-                # The bubble has reached the right end. Some punishment will be
-                # added here.
-
-                # Temporary action: Start over
-                self._bubble.move(-(self._screen_width + self._bubble.radius))
+                self._bubble = Bubble(self._renderer)
 
             if self._bubble.is_moving:
                 self._bubble.move(velocity)
@@ -39,7 +35,7 @@ class GameLoop:
                 if event.key == pygame.K_x:
                     return False
                 elif event.key == self._bubble.key:
-                    self._bubble.is_moving = False
+                    self._bubble.toggle_movement()
                 else:
                     return True
             elif event.type == pygame.QUIT:

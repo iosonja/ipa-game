@@ -12,7 +12,7 @@ def main():
     window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
     pygame.display.set_caption("IPA game")
 
-    renderer = Renderer(window, BACKGROUND_COLOR)
+    renderer = Renderer(window, WINDOW_WIDTH, BACKGROUND_COLOR)
     event_queue = EventQueue()
     loop = GameLoop(window, WINDOW_WIDTH, renderer, event_queue)
 
