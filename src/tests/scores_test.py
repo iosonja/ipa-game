@@ -2,7 +2,7 @@ import unittest
 from scores import Scores
 
 
-class TestButton(unittest.TestCase):
+class TestScores(unittest.TestCase):
     def setUp(self):
         self.scores = Scores()
 
@@ -13,6 +13,11 @@ class TestButton(unittest.TestCase):
         self.scores.increase(10)
         self.assertEqual(self.scores.number, 10)
 
-    def test_scores_go_to_zero_when_asked(self):
-        self.scores.make_zero
+    def test_scores_decrease_when_not_zero(self):
+        self.scores.increase(10)
+        self.scores.decrease(2)
+        self.assertEqual(self.scores.number, 8)
+
+    def test_scores_dont_go_below_zero(self):
+        self.scores.decrease(2)
         self.assertEqual(self.scores.number, 0)
