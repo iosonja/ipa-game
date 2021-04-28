@@ -23,9 +23,9 @@ The user is expected to try and make the character bubbles disappear before they
 - [ ] In later versions, classification happens with mouse dragging.
 - [x] [Done] If the category is correct, the bubble disappears.
 - [x] [Done] If the category is correct, a new bubble appears from the left side.
-- [x] [Done] If the category is correct, scores increase by 10.
+- [x] [Done] If the category is correct, scores increase.
 - [x] [Done] If the category is incorrect, the bubble continues floating.
-- [x] [Done] If the category is incorrect, scores decrease by 2.
+- [x] [Done] If the category is incorrect, scores decrease.
 - [x] [Done] Scores can't go below zero.
 - [x] [Done] The user is allowed to retry as many times as the bubble is in sight.
 
