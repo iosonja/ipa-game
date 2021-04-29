@@ -1,4 +1,10 @@
 class Scores:
+    """This class stores user's scores.
+
+    Attributes:
+        number (int): current score.
+    """
+
     def __init__(self):
         self.number = 0
 
