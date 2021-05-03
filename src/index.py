@@ -15,7 +15,7 @@ def main():
     """This function creates the window, renderer, event queue and game loop.
     It initializes pygame and starts the game loop.
     """
-    
+
     window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
     pygame.display.set_caption("IPA game")
 

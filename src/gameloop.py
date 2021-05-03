@@ -27,7 +27,7 @@ class GameLoop:
             event_queue (EventQueue): Events are held here before processing.
             score_tracker (score_tracker): This object tracks the player's score_tracker.
         """
-        
+
         self._window = window
         self._window_width = window_width
         self._renderer = renderer
@@ -43,7 +43,7 @@ class GameLoop:
         and places it to the left side of the window. After the main loop has
         been exited, the method quits pygame.
         """
-        
+
         velocity = 5
 
         while True:
@@ -78,7 +78,7 @@ class GameLoop:
                 return True
 
             # The following stopped working for some reason, will fix later
-            elif event.type == pygame.QUIT:
+            if event.type == pygame.QUIT:
                 return False
 
             return True

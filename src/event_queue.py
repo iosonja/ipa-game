@@ -7,5 +7,6 @@ class EventQueue:
 
     Attributes: none
     """
+
     def get(self):
         return pygame.event.get()

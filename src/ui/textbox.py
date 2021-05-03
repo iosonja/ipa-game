@@ -14,7 +14,8 @@ class Textbox:
         text1 = """Welcome! Try to make the bubble stop before it reaches the right edge. In the current version of the game, the stopping"""
         text2 = """can be done by pressing R on your keyboard if the bubble is red, G if green, B if blue, W if white and P if pink."""
         text3 = "You can close the game by pressing X."
-        score_text = "Current score: {}".format(self._score_tracker.current_score)
+        score_text = "Current score: {}".format(
+            self._score_tracker.current_score)
 
         self._window.blit(self.font.render(text1, True, (0, 0, 0)), (10, 420))
         self._window.blit(self.font.render(text2, True, (0, 0, 0)), (10, 440))

@@ -13,6 +13,7 @@ class Bubble:
         key: The letter key that depends on color, needed for classification.
         _renderer: Renderer takes care of updating playing view.
     """
+
     def __init__(self, renderer):
         self.radius = 50
         self.x = -self.radius
