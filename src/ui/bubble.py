@@ -15,51 +15,22 @@ class Bubble:
     """
 
     def __init__(self, renderer):
-        self.radius = 50
-        self.x = -self.radius
+        symbols = {'src/assets/affricate0.png': pygame.K_a,
+                   'src/assets/approximant0.png': pygame.K_m,
+                   'src/assets/fricative0.png': pygame.K_f,
+                   'src/assets/nasal0.png': pygame.K_n,
+                   'src/assets/plosive0.png': pygame.K_p}
+
+        self.x = -50  # half of an image's width
         self.y = randrange(80, 300)  # make bubbles appear from random heights
-        self._color = self.colors_list()[randrange(5)]
-        self.key = self.define_key(self._color)
+        self.symbol = list(symbols.keys())[randrange(5)]
+        self.key = symbols.get(self.symbol)
+        self.symbol_image = pygame.image.load(self.symbol)
         self._renderer = renderer
-        print("New bubble was initialized")
 
-    def colors_list(self):
-        """This method makes a list of RGB color codes.
-
-        Returns:
-            list: RGB color codes
-        """
-
-        red = (255, 0, 0)
-        green = (0, 255, 0)
-        blue = (0, 0, 255)
-        white = (255, 255, 255)
-        pink = (255, 0, 255)
-
-        colors = [red, green, blue, white, pink]
-        return colors
-
-    def define_key(self, color):
-        """This method defines the key that corresponds to the bubble's color.
-
-        Args:
-            color (tuple): the bubble's RGB color code
-
-        Returns:
-            int: key that corresponds to the bubble's color
-        """
-
-        # TODO: Change the color codes to natural language later (e.g. with a dict)
-        if color == (255, 0, 0):
-            return pygame.K_r
-        elif color == (0, 255, 0):
-            return pygame.K_g
-        elif color == (0, 0, 255):
-            return pygame.K_b
-        elif color == (255, 255, 255):
-            return pygame.K_w
-        else:
-            return pygame.K_p
+        # The following doesn't work, it prints everything after game has ended
+        print("New bubble was created, press {} to make a new one!".format(
+            chr(self.key).upper()))
 
     def move(self, amount):
         """Move the bubble
@@ -68,9 +39,3 @@ class Bubble:
             amount (int): how much and to which direction the bubble moves
         """
         self.x += amount
-
-    def rerender(self):
-        """Call the renderer to update game view.
-        """
-        self._renderer.redraw(self._color, self.x,
-                              self.y, self.radius)

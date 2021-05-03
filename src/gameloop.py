@@ -49,12 +49,12 @@ class GameLoop:
         while True:
             if self._handle_events() is False:
                 break
-            if self._bubble.x >= self._window_width + self._bubble.radius:
+            if self._bubble.x >= self._window_width + 50:
                 self._bubble = Bubble(self._renderer)
 
             pygame.time.delay(60)
             self._bubble.move(velocity)
-            self._bubble.rerender()
+            self._rerender()
 
         pygame.quit()
 
@@ -82,3 +82,10 @@ class GameLoop:
                 return False
 
             return True
+
+    def _rerender(self):
+        """Call the renderer to update game view.
+        """
+
+        self._renderer.redraw(
+            self._bubble.x, self._bubble.y, self._bubble.symbol_image)
