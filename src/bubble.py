@@ -1,5 +1,6 @@
 from random import randrange
 import pygame
+from symbol_tracker import SymbolTracker
 
 
 class Bubble:
@@ -14,19 +15,12 @@ class Bubble:
         _renderer: Renderer takes care of updating playing view.
     """
 
-    def __init__(self, renderer):
-        symbols = {'src/assets/affricate0.png': pygame.K_a,
-                   'src/assets/approximant0.png': pygame.K_m,
-                   'src/assets/fricative0.png': pygame.K_f,
-                   'src/assets/nasal0.png': pygame.K_n,
-                   'src/assets/plosive0.png': pygame.K_p}
-
+    def __init__(self, symbol_tracker):
         self.x = -50  # half of an image's width
         self.y = randrange(80, 300)  # make bubbles appear from random heights
-        self.symbol = list(symbols.keys())[randrange(5)]
-        self.key = symbols.get(self.symbol)
+        self.symbol = symbol_tracker.give_random_symbol_file()
+        self.key = symbol_tracker.give_key()
         self.symbol_image = pygame.image.load(self.symbol)
-        self._renderer = renderer
 
         # The following doesn't work, it prints everything after game has ended
         print("New bubble was created, press {} to make a new one!".format(

@@ -13,11 +13,11 @@ class ScoreTracker:
         self.correct_answers = 0
         self.max_correct_answers = max_correct_answers
 
-    def handle_correct_answer(self):
+    def log_correct_answer(self):
         self.current_score += 10
         self.correct_answers += 1
 
-    def handle_wrong_answer(self):
+    def log_wrong_answer(self):
         if self.current_score - 2 > 0:
             self.current_score -= 2
         else:

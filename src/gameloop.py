@@ -1,5 +1,6 @@
 import pygame
 from bubble import Bubble
+from symbol_tracker import SymbolTracker
 
 
 class GameLoop:
@@ -17,7 +18,7 @@ class GameLoop:
         _bubble: The bubble that is currently in the playing view.
     """
 
-    def __init__(self, window, window_width, renderer, event_queue, score_tracker):
+    def __init__(self, window, window_width, renderer, event_queue, score_tracker, symbol_tracker):
         """Constructor for creating a new game loop.
 
         Args:
@@ -25,7 +26,7 @@ class GameLoop:
             window_width (int): Each bubble's distance from start to finish.
             renderer (Renderer): Renderer takes care of updating playing view.
             event_queue (EventQueue): Events are held here before processing.
-            score_tracker (score_tracker): This object tracks the player's score_tracker.
+            score_tracker (ScoreTracker): This tracks scores & correct answers.
         """
 
         self._window = window
@@ -33,7 +34,8 @@ class GameLoop:
         self._renderer = renderer
         self._event_queue = event_queue
         self._score_tracker = score_tracker
-        self._bubble = Bubble(self._renderer)
+        self._symbol_tracker = symbol_tracker
+        self._bubble = Bubble(self._symbol_tracker)
 
     def start(self):
         """This method contains the main loop. It repeatedly calls for
@@ -50,13 +52,20 @@ class GameLoop:
             if self._handle_events() is False:
                 break
             if self._bubble.x >= self._window_width + 50:
-                self._bubble = Bubble(self._renderer)
+                self._bubble = Bubble(self._symbol_tracker)
 
             pygame.time.delay(60)
             self._bubble.move(velocity)
             self._renderer.redraw(self._bubble)
 
         pygame.quit()
+
+    def _handle_correct_answer(self):
+        self._score_tracker.log_correct_answer()
+        self._symbol_tracker.correctly_classified(self._bubble.symbol)
+
+        if not self._score_tracker.game_over():
+            self._bubble = Bubble(self._symbol_tracker)
 
     def _handle_events(self):
         """This method chooses an action based on user input until game's over.
@@ -70,11 +79,10 @@ class GameLoop:
                 if event.key == pygame.K_x:
                     return False
                 if event.key == self._bubble.key:
-                    self._score_tracker.handle_correct_answer()
-                    self._bubble = Bubble(self._renderer)
+                    self._handle_correct_answer()
                     return True
 
-                self._score_tracker.handle_wrong_answer()
+                self._score_tracker.log_wrong_answer()
                 return True
 
             # The following stopped working for some reason, will fix later
