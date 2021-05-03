@@ -13,11 +13,11 @@ class GameLoop:
         _window_width: The width of the window = bubble's travel distance.
         _renderer: The renderer object takes care of updating playing view.
         _event_queue: Events are held here prior to being processed.
-        _scores: This object tracks the player's scores.
+        _score_tracker: This object tracks the player's score_tracker.
         _bubble: The bubble that is currently in the playing view.
     """
 
-    def __init__(self, window, window_width, renderer, event_queue, scores):
+    def __init__(self, window, window_width, renderer, event_queue, score_tracker):
         """Constructor for creating a new game loop.
 
         Args:
@@ -25,14 +25,14 @@ class GameLoop:
             window_width (int): Each bubble's distance from start to finish.
             renderer (Renderer): Renderer takes care of updating playing view.
             event_queue (EventQueue): Events are held here before processing.
-            scores (Scores): This object tracks the player's scores.
+            score_tracker (score_tracker): This object tracks the player's score_tracker.
         """
         
         self._window = window
         self._window_width = window_width
         self._renderer = renderer
         self._event_queue = event_queue
-        self._scores = scores
+        self._score_tracker = score_tracker
         self._bubble = Bubble(self._renderer)
 
     def start(self):
@@ -59,19 +59,22 @@ class GameLoop:
         pygame.quit()
 
     def _handle_events(self):
-        """This method chooses an action based on user input.
+        """This method chooses an action based on user input until game over.
         """
+
+        if self._score_tracker.game_over():
+            return False
 
         for event in self._event_queue.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_x:
                     return False
                 if event.key == self._bubble.key:
-                    self._scores.increase(10)
+                    self._score_tracker.handle_correct_answer()
                     self._bubble = Bubble(self._renderer)
                     return True
 
-                self._scores.decrease(1)
+                self._score_tracker.handle_wrong_answer()
                 return True
 
             # The following stopped working for some reason, will fix later

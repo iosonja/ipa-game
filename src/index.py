@@ -2,12 +2,13 @@ import pygame
 from ui.renderer import Renderer
 from gameloop import GameLoop
 from event_queue import EventQueue
-from scores import Scores
+from score_tracker import ScoreTracker
 
 WINDOW_WIDTH = 1200
 WINDOW_HEIGHT = 500
 BACKGROUND_COLOR = (212, 220, 255)
-scores = Scores()
+MAX_CORRECT_ANSWERS = 24  # Number of items to be asked
+scores = ScoreTracker(MAX_CORRECT_ANSWERS)
 
 
 def main():
