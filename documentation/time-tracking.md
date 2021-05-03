@@ -19,5 +19,8 @@
 |           | 2         | Code new features                  |
 |           | 1         | Writing automated tests            |
 |           | 2         | Architecture documentation         |
-| 29/4/2021 | 2         | Docstrings & source code commenting|                        
-|  **all**  | **32**    |                                    |
+| 29/4/2021 | 2         | Docstrings & source code commenting|
+| 3/5/2021  | 2         | Refactoring                        |
+|           | 1         | Drawing new graphic elements       |
+|           | 3         | Implement new features to the code |
+|  **all**  | **38**    |                                    |
