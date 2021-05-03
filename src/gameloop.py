@@ -1,5 +1,5 @@
 import pygame
-from ui.bubble import Bubble
+from bubble import Bubble
 
 
 class GameLoop:
@@ -44,7 +44,7 @@ class GameLoop:
         been exited, the method quits pygame.
         """
 
-        velocity = 5
+        velocity = 3
 
         while True:
             if self._handle_events() is False:
