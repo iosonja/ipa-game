@@ -54,12 +54,12 @@ class GameLoop:
 
             pygame.time.delay(60)
             self._bubble.move(velocity)
-            self._rerender()
+            self._renderer.redraw(self._bubble)
 
         pygame.quit()
 
     def _handle_events(self):
-        """This method chooses an action based on user input until game over.
+        """This method chooses an action based on user input until game's over.
         """
 
         if self._score_tracker.game_over():
@@ -82,10 +82,3 @@ class GameLoop:
                 return False
 
             return True
-
-    def _rerender(self):
-        """Call the renderer to update game view.
-        """
-
-        self._renderer.redraw(
-            self._bubble.x, self._bubble.y, self._bubble.symbol_image)

@@ -6,11 +6,11 @@ class Bubble:
     """This class contains information of a bubble moving through the game view.
 
     Attributes:
-        radius: Radius of the bubble.
         x: Current X-coordinate.
         y: Current y-coordinate.
-        _color: The bubble's color.
-        key: The letter key that depends on color, needed for classification.
+        symbol: Path to a file where the symbol is depicted
+        key: The letter key that depends on the symbol, needed for classification.
+        symbol_image: Surface data of the symbol image.
         _renderer: Renderer takes care of updating playing view.
     """
 
