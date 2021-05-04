@@ -14,4 +14,4 @@ As one can see based on the class diagram below, the game is full of unidirectio
 ![IPAgame_class_diagram](https://user-images.githubusercontent.com/40118812/117043838-66c4ee80-ad16-11eb-9aaf-591023a523bd.jpg)
 
 ### Life cycle of the main loop
-(https://user-images.githubusercontent.com/40118812/117044867-90324a00-ad17-11eb-9507-1bdc111ff57c.png)
+![IPA_seqdiagram](https://user-images.githubusercontent.com/40118812/117045123-d5567c00-ad17-11eb-90fd-d744b1b67c77.png)
