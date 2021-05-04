@@ -11,7 +11,7 @@ class Renderer:
         self._width = width
         self._background_color = background_color
         self._score_tracker = score_tracker
-        self._text_displayer = TextDisplayer(self._window, self._width)
+        self._text_displayer = TextDisplayer(self._window)
 
     def redraw(self, bubble):
         """Update the playing view when the game is still on.
