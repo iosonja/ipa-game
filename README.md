@@ -62,6 +62,7 @@ poetry run invoke format
 
 ## Documentation
 
+[Instruction Manual](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/manual.md)<br>
 [Requirements Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/requirements-document.md)<br>
 [Architecture Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/architecture.md)<br>
-[Time tracking](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/time-tracking.md)<br>
+[Time Tracking](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/time-tracking.md)<br>
