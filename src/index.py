@@ -14,8 +14,8 @@ score_tracker = ScoreTracker(MAX_CORRECT_ANSWERS)
 
 
 def main():
-    """This function creates the window, renderer, event queue and game loop.
-    It initializes pygame and starts the game loop.
+    """This function creates the main components of the game. It initializes
+    pygame and starts the game loop.
     """
 
     window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))

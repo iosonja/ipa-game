@@ -15,19 +15,12 @@ class GameLoop:
         _renderer: The renderer object takes care of updating playing view.
         _event_queue: Events are held here prior to being processed.
         _score_tracker: This object tracks the player's score_tracker.
+        _symbol_tracker: Temporary database for symbols and their keys.
         _bubble: The bubble that is currently in the playing view.
     """
 
-    def __init__(self, window, window_width, renderer, event_queue, score_tracker, symbol_tracker):
-        """Constructor for creating a new game loop.
-
-        Args:
-            window (pygame.Surface): User interface display.
-            window_width (int): Each bubble's distance from start to finish.
-            renderer (Renderer): Renderer takes care of updating playing view.
-            event_queue (EventQueue): Events are held here before processing.
-            score_tracker (ScoreTracker): This tracks scores & correct answers.
-        """
+    def __init__(self, window, window_width, renderer, event_queue,
+                 score_tracker, symbol_tracker):
 
         self._window = window
         self._window_width = window_width
@@ -59,6 +52,9 @@ class GameLoop:
             pygame.time.delay(20)
 
     def _handle_correct_answer(self):
+        """Do a set of actions when the player answers correctly.
+        """
+
         self._score_tracker.log_correct_answer()
         self._symbol_tracker.correctly_classified(self._bubble.symbol)
 
@@ -66,7 +62,7 @@ class GameLoop:
             self._bubble = Bubble(self._symbol_tracker)
 
     def _handle_events(self):
-        """This method chooses an action based on user input until game's over.
+        """Choose an action based on user input.
         """
 
         for event in self._event_queue.get():
