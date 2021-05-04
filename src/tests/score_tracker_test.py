@@ -1,5 +1,5 @@
 import unittest
-from score_tracker import ScoreTracker
+from services.score_tracker import ScoreTracker
 
 
 class TestScoreTracker(unittest.TestCase):

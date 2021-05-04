@@ -1,9 +1,9 @@
 import pygame
 from ui.renderer import Renderer
-from symbol_tracker import SymbolTracker
+from services.symbol_tracker import SymbolTracker
 from gameloop import GameLoop
-from event_queue import EventQueue
-from score_tracker import ScoreTracker
+from services.event_queue import EventQueue
+from services.score_tracker import ScoreTracker
 
 WINDOW_WIDTH = 1200
 WINDOW_HEIGHT = 500

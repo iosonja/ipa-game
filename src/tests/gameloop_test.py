@@ -1,10 +1,10 @@
 import unittest
 import pygame
 from gameloop import GameLoop
-from score_tracker import ScoreTracker
+from services.score_tracker import ScoreTracker
 from ui.renderer import Renderer
-from event_queue import EventQueue
-from symbol_tracker import SymbolTracker
+from services.event_queue import EventQueue
+from services.symbol_tracker import SymbolTracker
 
 
 class TestGameLoop(unittest.TestCase):
