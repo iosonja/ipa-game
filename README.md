@@ -6,7 +6,7 @@ The symbols that appear in the game will describe consonants that appear in the 
 
 [Release for week 5](https://github.com/iosonja/ot-harjoitustyo/releases/tag/viikko5)
 
-## How to use the app
+## Start using the app
 The app has been built using Python version 3.6.0. Versions below that may not work as expected.
 
 1. Install dependencies with the command:
@@ -20,17 +20,20 @@ poetry run invoke start
 >Starting the game may take several seconds in the current version.
 >
 
-### Instructions for playing the current version
-Try to stop each bubble from reaching the right edge of the screen. The bubble disappears when its color has been classified correctly with a keystroke.
-There are only five different colors, because they are only a temporary basis for classification. Currently the game won't end before you quit the program by pressing the X key.
-#### Keystrokes by color:
+## Play the game
+Try to stop each bubble from reaching the right edge of the screen. The bubble disappears when the symbol displayed
+on it has been classified correctly with a keystroke. Each correct keystroke awards 10 points and each wrong keystroke
+results in a 2 point penalty. After each symbol has been correctly classified, the game ends with a banner displaying
+the final score. Currently the game only goes through 5 of the 24 symbols so that testing the game doesn't take too long.
+#### Correct answers (symbol on the left, keystroke on the right):
 ```
-R - red
-G - green
-B - blue
-W - white
-P - pink
+f => F (stands for fricative)
+p => P (stands for plosive)
+ʈʃ => A (stands for affricate)
+m => N (stands for nasal)
+r => X (stands for approximant)
 ```
+
 
 
 ## Command line operations for developers
