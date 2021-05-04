@@ -51,12 +51,15 @@ class GameLoop:
         while True:
             self._handle_events()
 
-            if self._bubble.x >= self._window_width + 50:
-                self._bubble = Bubble(self._symbol_tracker)
+            if self._score_tracker.game_over():
+                self._renderer.show_end_banner()
+            else:
+                if self._bubble.x >= self._window_width + 50:
+                    self._bubble = Bubble(self._symbol_tracker)
+                self._bubble.move(velocity)
+                self._renderer.redraw(self._bubble)
 
             pygame.time.delay(60)
-            self._bubble.move(velocity)
-            self._renderer.redraw(self._bubble)
 
         pygame.quit()
         sys.exit()
@@ -71,10 +74,6 @@ class GameLoop:
     def _handle_events(self):
         """This method chooses an action based on user input until game's over.
         """
-
-        if self._score_tracker.game_over():
-            pygame.quit()
-            sys.exit()
 
         for event in self._event_queue.get():
             if event.type == pygame.QUIT:

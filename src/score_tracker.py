@@ -18,6 +18,9 @@ class ScoreTracker:
         self.correct_answers += 1
 
     def log_wrong_answer(self):
+        if self.game_over():
+            return
+
         if self.current_score - 2 > 0:
             self.current_score -= 2
         else:
