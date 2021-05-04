@@ -4,7 +4,7 @@ In the current version of the game, the classification is done for colors.
 When the app has been finalized, the player needs to classify symbols of the International Phonetic Alphabet (IPA).
 The symbols that appear in the game will describe consonants that appear in the English language.
 
-[Release for week 5](https://github.com/iosonja/ot-harjoitustyo/releases/tag/viikko5)
+[Release for week 6](https://github.com/iosonja/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Start using the app
 The app has been built using Python version 3.6.0. Versions below that may not work as expected.
