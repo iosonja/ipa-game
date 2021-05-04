@@ -42,12 +42,14 @@ class GameLoop:
             self._handle_events()
 
             if self._score_tracker.game_over():
-                self._renderer.show_end_banner(self._score_tracker.current_score)
+                self._renderer.show_end_banner(
+                    self._score_tracker.current_score)
             else:
                 if self._bubble.x >= self._window_width + 50:
                     self._bubble = Bubble(self._symbol_tracker)
                 self._bubble.move(1)
-                self._renderer.redraw(self._bubble, self._score_tracker.current_score)
+                self._renderer.redraw(
+                    self._bubble, self._score_tracker.current_score)
 
             pygame.time.delay(20)
 

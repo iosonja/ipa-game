@@ -14,7 +14,8 @@ class TestEventQueue(unittest.TestCase):
         renderer = Renderer(window, 50, (0, 0, 0))
         self.event_queue = EventQueue()
         symbol_tracker = SymbolTracker()
-        GameLoop(window, 50, renderer, self.event_queue, score_tracker, symbol_tracker)
+        GameLoop(window, 50, renderer, self.event_queue,
+                 score_tracker, symbol_tracker)
 
     def test_event_queue_getter_returns_data(self):
         response = self.event_queue.get()
