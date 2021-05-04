@@ -7,8 +7,9 @@ The app offers a gamified way to learn to classify the International Phonetic Al
 The app has one user type, a basic user, who can play the game and not modify the contents.
 
 ## User Interface
-#### There is one view for the game: the playing view.
+#### There are two views: a playing view and a Game Over -view.
 
+First sketch of the playing view:
 ![IPA-game_ui](https://user-images.githubusercontent.com/40118812/112819372-3346d280-908d-11eb-8f7b-9a0442a7f18c.png)
 
 - [x] [Done] In the playing view, there are bubbles appearing from the left side of the screen and floating towards the right edge.
@@ -30,9 +31,9 @@ The user is expected to try and make the character bubbles disappear before they
 - [x] [Done] The user is allowed to retry as many times as the bubble is in sight.
 
 - [x] [Done] The bubbles move at a steady pace. 
-- [ ] There is only a certain number of classifiable items and after all of them have been correctly classified, the game ends.
+- [x] [Done] There is only a certain number of classifiable items and after all of them have been correctly classified, the game ends.
 - [x] [Done] In the first versions of the game, classification happens according to bubble color, which is randomized.
-- [ ] In the next versions of the game there are symbols of consonants in the bubbles, and categorization happens based on IPA symbols and their manner of articulation.
+- [x] [Done] In the next versions of the game there are symbols of consonants in the bubbles, and categorization happens based on IPA symbols and their manner of articulation.
 
 ## Further development
 After the most basic version, here are some features to be added to the game:
