@@ -1,3 +1,4 @@
+import sys
 import pygame
 from bubble import Bubble
 
@@ -48,8 +49,8 @@ class GameLoop:
         velocity = 3
 
         while True:
-            if self._handle_events() is False:
-                break
+            self._handle_events()
+
             if self._bubble.x >= self._window_width + 50:
                 self._bubble = Bubble(self._symbol_tracker)
 
@@ -58,6 +59,7 @@ class GameLoop:
             self._renderer.redraw(self._bubble)
 
         pygame.quit()
+        sys.exit()
 
     def _handle_correct_answer(self):
         self._score_tracker.log_correct_answer()
@@ -71,21 +73,18 @@ class GameLoop:
         """
 
         if self._score_tracker.game_over():
-            return False
+            pygame.quit()
+            sys.exit()
 
         for event in self._event_queue.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_x:
-                    return False
+                    pygame.quit()
+                    sys.exit()
                 if event.key == self._bubble.key:
                     self._handle_correct_answer()
-                    return True
 
                 self._score_tracker.log_wrong_answer()
-                return True
-
-            # The following stopped working for some reason, will fix later
-            if event.type == pygame.QUIT:
-                return False
-
-            return True
