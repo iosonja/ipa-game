@@ -18,8 +18,10 @@ class SymbolTracker:
         del self._remaining_symbols[file_path]
 
     def give_random_symbol_file(self):
-        self._current_symbol_file = list(self._remaining_symbols.keys())[randrange(len(self._remaining_symbols))]
-        self._current_key = self._remaining_symbols.get(self._current_symbol_file)
+        self._current_symbol_file = list(self._remaining_symbols.keys())[
+            randrange(len(self._remaining_symbols))]
+        self._current_key = self._remaining_symbols.get(
+            self._current_symbol_file)
         return self._current_symbol_file
 
     def give_key(self):

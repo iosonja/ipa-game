@@ -23,7 +23,8 @@ def main():
 
     renderer = Renderer(window, WINDOW_WIDTH, BACKGROUND_COLOR, score_tracker)
     event_queue = EventQueue()
-    loop = GameLoop(window, WINDOW_WIDTH, renderer, event_queue, score_tracker, symbol_tracker)
+    loop = GameLoop(window, WINDOW_WIDTH, renderer,
+                    event_queue, score_tracker, symbol_tracker)
 
     pygame.init()
     loop.start()

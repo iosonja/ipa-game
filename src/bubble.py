@@ -1,6 +1,5 @@
 from random import randrange
 import pygame
-from symbol_tracker import SymbolTracker
 
 
 class Bubble:

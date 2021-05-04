@@ -1,6 +1,5 @@
 import pygame
 from bubble import Bubble
-from symbol_tracker import SymbolTracker
 
 
 class GameLoop:
