@@ -81,9 +81,6 @@ class GameLoop:
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_x:
-                    pygame.quit()
-                    sys.exit()
                 if event.key == self._bubble.key:
                     self._handle_correct_answer()
 

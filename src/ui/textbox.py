@@ -12,11 +12,11 @@ class Textbox:
                          (0, 450), (self._width, 450), 1)
 
     def add_text(self):
-        text1 = "Try to make the bubble stop before it reaches the right edge. You can close the game by pressing X."
+        text1 = "Try to make the bubble stop before it reaches the right edge."
         score_text = "Current score: {}".format(
             self._score_tracker.current_score)
 
         self._window.blit(self.score_font.render(
             score_text, True, (0, 0, 0)), (10, 10))
         self._window.blit(self.info_font.render(
-            text1, True, (0, 0, 0)), (10, 460))
+            text1, True, (0, 0, 0)), (210, 460))

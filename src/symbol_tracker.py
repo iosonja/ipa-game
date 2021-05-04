@@ -5,7 +5,7 @@ import pygame
 class SymbolTracker:
     def __init__(self):
         self._remaining_symbols = {'src/assets/affricate0.png': pygame.K_a,
-                                   'src/assets/approximant0.png': pygame.K_m,
+                                   'src/assets/approximant0.png': pygame.K_x,
                                    'src/assets/fricative0.png': pygame.K_f,
                                    'src/assets/nasal0.png': pygame.K_n,
                                    'src/assets/plosive0.png': pygame.K_p}
