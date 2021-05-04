@@ -4,6 +4,7 @@ from gameloop import GameLoop
 from score_tracker import ScoreTracker
 from ui.renderer import Renderer
 from event_queue import EventQueue
+from symbol_tracker import SymbolTracker
 
 
 class TestEventQueue(unittest.TestCase):
@@ -12,7 +13,8 @@ class TestEventQueue(unittest.TestCase):
         score_tracker = ScoreTracker(24)
         renderer = Renderer(window, 50, (0, 0, 0), score_tracker)
         self.event_queue = EventQueue()
-        GameLoop(window, 50, renderer, self.event_queue, score_tracker)
+        symbol_tracker = SymbolTracker()
+        GameLoop(window, 50, renderer, self.event_queue, score_tracker, symbol_tracker)
 
     def test_event_queue_getter_returns_data(self):
         response = self.event_queue.get()
