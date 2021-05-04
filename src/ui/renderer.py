@@ -6,14 +6,13 @@ class Renderer:
     """Renderer takes care of updating the game view according to any events.
     """
 
-    def __init__(self, window, width, background_color, score_tracker):
+    def __init__(self, window, width, background_color):
         self._window = window
         self._width = width
         self._background_color = background_color
-        self._score_tracker = score_tracker
         self._text_displayer = TextDisplayer(self._window)
 
-    def redraw(self, bubble):
+    def redraw(self, bubble, score):
         """Update the playing view when the game is still on.
 
         Attributes:
@@ -25,13 +24,13 @@ class Renderer:
         pygame.draw.line(self._window, (0, 0, 0),
                          (0, 450), (self._width, 450), 1)
         self._text_displayer.draw_info()
-        self._text_displayer.draw_scores(self._score_tracker.current_score)
+        self._text_displayer.draw_scores(score)
         pygame.display.update()
 
-    def show_end_banner(self):
+    def show_end_banner(self, score):
         """Display the Game Over -view.
         """
 
         self._window.fill(self._background_color)
-        self._text_displayer.draw_game_over(self._score_tracker.current_score)
+        self._text_displayer.draw_game_over(score)
         pygame.display.update()

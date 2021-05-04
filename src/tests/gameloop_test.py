@@ -11,7 +11,7 @@ class TestGameLoop(unittest.TestCase):
     def setUp(self):
         window = pygame.display.set_mode((50, 50))
         score_tracker = ScoreTracker(24)
-        renderer = Renderer(window, 50, (0, 0, 0), score_tracker)
+        renderer = Renderer(window, 50, (0, 0, 0))
         event_queue = EventQueue()
         symbol_tracker = SymbolTracker()
         self.gameloop = GameLoop(window, 50, renderer,
