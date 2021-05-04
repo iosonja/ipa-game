@@ -39,14 +39,11 @@ class GameLoop:
 
     def start(self):
         """This method contains the main loop. It repeatedly calls for
-        _handle_events() to check whether or not to continue looping. It moves
-        the current bubble's position forward with each iteration, unless the
-        bubble has reach the right edge. In that case it creates a new bubble
-        and places it to the left side of the window. After the main loop has
-        been exited, the method quits pygame.
+        _handle_events() to react to user input. It moves the current bubble's
+        position forward with each iteration, unless the bubble has reached the
+        right edge. In that case it creates a new bubble and places it to the
+        left side of the window.
         """
-
-        velocity = 3
 
         while True:
             self._handle_events()
@@ -56,13 +53,10 @@ class GameLoop:
             else:
                 if self._bubble.x >= self._window_width + 50:
                     self._bubble = Bubble(self._symbol_tracker)
-                self._bubble.move(velocity)
+                self._bubble.move(1)
                 self._renderer.redraw(self._bubble)
 
-            pygame.time.delay(60)
-
-        pygame.quit()
-        sys.exit()
+            pygame.time.delay(20)
 
     def _handle_correct_answer(self):
         self._score_tracker.log_correct_answer()
