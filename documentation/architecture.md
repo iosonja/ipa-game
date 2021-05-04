@@ -1,11 +1,17 @@
-#### NB: The images may not be displayed correctly if you are viewing this through GitHub in dark mode.
+## User Interface
 
-## Class Diagram
+Currently the user interface has two views:
+- playing view
+- Game over -view
 
-![IPAgame_class_diagram-new-3](https://user-images.githubusercontent.com/40118812/115455490-b1c90700-a22a-11eb-8559-eb4f5056ffe1.png)
+The views are handled by the the same class, Renderer. The displayed view depends on the method of Renderer being called in the game loop.
+The UI is separated from the logic and the code in the src/ui/ folder is independent of code outside of it.
 
-## Sequence Diagram: Life cycle of the game loop
+## Game Logic
 
-![Sequence Diagram_ Creating and exiting the game loop](https://user-images.githubusercontent.com/40118812/116305008-d6355e00-a7ab-11eb-9e8b-6b01f945e448.png)
+The main loop that runs the game is placed in the Gameloop class. New instances of Bubble are created and the Renderer is called to update inside the main loop.
+As one can see based on the class diagram below, the game is full of unidirectional dependencies. The diagram shows both the logic and UI parts and their folder structure.<br><br>
+![IPAgame_class_diagram](https://user-images.githubusercontent.com/40118812/117043838-66c4ee80-ad16-11eb-9aaf-591023a523bd.jpg)
 
-Note to self: Find out how to delete objects, like bubbles, from memory when they are no longer needed.
+### Life cycle of the main loop
+(https://user-images.githubusercontent.com/40118812/117044867-90324a00-ad17-11eb-9507-1bdc111ff57c.png)
