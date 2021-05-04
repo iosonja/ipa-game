@@ -23,4 +23,6 @@
 | 3/5/2021  | 2         | Refactoring                        |
 |           | 1         | Drawing new graphic elements       |
 |           | 3         | Implement new features to the code |
-|  **all**  | **38**    |                                    |
+| 4/5/2021  | 1         | Debugging                          |
+|           | 1         | Code new features                  |
+|  **all**  | **40**    |                                    |
