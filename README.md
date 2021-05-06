@@ -1,7 +1,6 @@
 # IPA Game [![wakatime](https://wakatime.com/badge/github/iosonja/ot-harjoitustyo.svg)](https://wakatime.com/badge/github/iosonja/ot-harjoitustyo)<br>
 IPA Game is a desktop-based game where the player needs to classify items that appear on bubbles floating in a window view.
-In the current version of the game, the classification is done for colors.
-When the app has been finalized, the player needs to classify symbols of the International Phonetic Alphabet (IPA).
+The player needs to classify symbols of the International Phonetic Alphabet (IPA).
 The symbols that appear in the game will describe consonants that appear in the English language.
 
 [Release for week 6](https://github.com/iosonja/ot-harjoitustyo/releases/tag/viikko6)
