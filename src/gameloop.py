@@ -29,6 +29,7 @@ class GameLoop:
         self._score_tracker = score_tracker
         self._symbol_tracker = symbol_tracker
         self._bubble = Bubble(self._symbol_tracker)
+        self.dragged = False
 
     def start(self):
         """This method contains the main loop. It repeatedly calls for
@@ -51,7 +52,10 @@ class GameLoop:
                 self._renderer.redraw(
                     self._bubble, self._score_tracker.current_score)
 
-            pygame.time.delay(20)
+                if self.dragged:
+                    self._renderer.handle_dragging()
+
+            pygame.time.delay(5)
 
     def _handle_correct_answer(self):
         """Do a set of actions when the player answers correctly.
@@ -74,5 +78,10 @@ class GameLoop:
             if event.type == pygame.KEYDOWN:
                 if event.key == self._bubble.key:
                     self._handle_correct_answer()
-
                 self._score_tracker.log_wrong_answer()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                self.dragged = True
+                pygame.mouse.set_visible(False)
+            elif event.type == pygame.MOUSEBUTTONUP:
+                self.dragged = False
+                pygame.mouse.set_visible(True)
