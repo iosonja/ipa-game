@@ -27,4 +27,6 @@
 |           | 1         | Coding new features                |
 |           | 2         | Updating UML diagrams + docstrings |
 |           | 1         | Writing automated tests            |
-|  **all**  | **43**    |                                    |
+| 9/5/2021  | 1         | Draw button images                 |
+| 11/5/2021 | 4         | Implement buttons and dragging     |
+|  **all**  | **48**    |                                    |
