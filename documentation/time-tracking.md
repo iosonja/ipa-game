@@ -28,5 +28,5 @@
 |           | 2         | Updating UML diagrams + docstrings |
 |           | 1         | Writing automated tests            |
 | 9/5/2021  | 1         | Draw button images                 |
-| 11/5/2021 | 4         | Implement buttons and dragging     |
-|  **all**  | **48**    |                                    |
+| 11/5/2021 | 5         | Implement buttons and dragging     |
+|  **all**  | **49**    |                                    |
