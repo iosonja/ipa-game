@@ -13,14 +13,38 @@ class SymbolTracker:
     """
 
     def __init__(self):
-        self._remaining_symbols = {'src/assets/symbol_images/affricate0.png': pygame.K_a,
-                                   'src/assets/symbol_images/approximant0.png': pygame.K_x,
-                                   'src/assets/symbol_images/fricative0.png': pygame.K_f,
-                                   'src/assets/symbol_images/nasal0.png': pygame.K_n,
-                                   'src/assets/symbol_images/plosive0.png': pygame.K_p}
+        self._remaining_symbols = self._make_symbol_dict()
         self._classified_symbols = []
         self._current_symbol_file = None
         self._current_key = None
+
+    def _make_symbol_dict(self):
+        return {
+            'src/assets/symbol_images/affricate0.png': pygame.K_a,
+            'src/assets/symbol_images/affricate1.png': pygame.K_a,
+            'src/assets/symbol_images/approximant0.png': pygame.K_x,
+            'src/assets/symbol_images/approximant1.png': pygame.K_x,
+            'src/assets/symbol_images/approximant2.png': pygame.K_x,
+            'src/assets/symbol_images/approximant3.png': pygame.K_x,
+            'src/assets/symbol_images/approximant4.png': pygame.K_x,
+            'src/assets/symbol_images/fricative0.png': pygame.K_f,
+            'src/assets/symbol_images/fricative1.png': pygame.K_f,
+            'src/assets/symbol_images/fricative2.png': pygame.K_f,
+            'src/assets/symbol_images/fricative3.png': pygame.K_f,
+            'src/assets/symbol_images/fricative4.png': pygame.K_f,
+            'src/assets/symbol_images/fricative5.png': pygame.K_f,
+            'src/assets/symbol_images/fricative6.png': pygame.K_f,
+            'src/assets/symbol_images/fricative7.png': pygame.K_f,
+            'src/assets/symbol_images/nasal0.png': pygame.K_n,
+            'src/assets/symbol_images/nasal1.png': pygame.K_n,
+            'src/assets/symbol_images/nasal2.png': pygame.K_n,
+            'src/assets/symbol_images/plosive0.png': pygame.K_p,
+            'src/assets/symbol_images/plosive1.png': pygame.K_p,
+            'src/assets/symbol_images/plosive2.png': pygame.K_p,
+            'src/assets/symbol_images/plosive3.png': pygame.K_p,
+            'src/assets/symbol_images/plosive4.png': pygame.K_p,
+            'src/assets/symbol_images/plosive5.png': pygame.K_p
+        }
 
     def correctly_classified(self, file_path):
         """Move a symbol from remaining to classified symbols.
