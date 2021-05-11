@@ -2,11 +2,12 @@ import pygame
 
 
 class Button:
-    def __init__(self, x, file_path):
+    def __init__(self, x, key, file_path):
         self._starting_x = x
         self.x = x
         self._starting_y = 448
         self.y = self._starting_y
+        self.key = key
         self.is_being_dragged = False
         self._image = pygame.image.load(file_path)
         self.collision_box = pygame.rect.Rect(x, self._starting_y, 200, 50)

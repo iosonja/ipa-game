@@ -35,11 +35,11 @@ class GameLoop:
 
     def _list_buttons(self):
         return [
-            Button(20, 'src/assets/button_images/affricate.png'),
-            Button(260, 'src/assets/button_images/approximant.png'),
-            Button(500, 'src/assets/button_images/fricative.png'),
-            Button(740, 'src/assets/button_images/nasal.png'),
-            Button(980, 'src/assets/button_images/plosive.png')
+            Button(20, pygame.K_a, 'src/assets/button_images/affricate.png'),
+            Button(260, pygame.K_x, 'src/assets/button_images/approximant.png'),
+            Button(500, pygame.K_f, 'src/assets/button_images/fricative.png'),
+            Button(740, pygame.K_n, 'src/assets/button_images/nasal.png'),
+            Button(980, pygame.K_p, 'src/assets/button_images/plosive.png')
         ]
 
     def start(self):
@@ -56,22 +56,40 @@ class GameLoop:
             if self._score_tracker.game_over():
                 self._renderer.show_end_banner(
                     self._score_tracker.current_score)
-            else:
-                if self._bubble.x >= self._window_width + 50:
-                    self._bubble = Bubble(self._symbol_tracker)
-                self._bubble.move(1)
-                self._renderer.redraw(
-                    self._bubble, self._buttons, self._score_tracker.current_score, self._active_button)
+                continue
 
-                for button in self._buttons:
-                    if button.is_being_dragged:
-                        self._active_button = button
-                        mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button.x = mouse_x - 50
-                        button.y = mouse_y - 25
-                        break
+            if self._bubble.x >= self._window_width + 50:
+                self._bubble = Bubble(self._symbol_tracker)
+            self._bubble.move(1)
+            self._bubble.update_collision_box()
+
+            for button in self._buttons:
+                if button.is_being_dragged:
+                    self._handle_drag(button)
+                    break
+
+            self._renderer.redraw(
+                self._bubble, self._buttons, self._score_tracker.current_score, self._active_button)
 
             pygame.time.delay(5)
+
+    def _handle_drag(self, button):
+        self._active_button = button
+        mouse_x, mouse_y = pygame.mouse.get_pos()
+        button.x = mouse_x - 50
+        button.y = mouse_y - 25
+        button.update_collision_box()
+        if button.collision_box.colliderect(self._bubble.collision_box):
+            self._handle_drag_collision(button)
+
+    def _handle_drag_collision(self, button):
+        if button.key == self._bubble.key:
+            self._handle_correct_answer()
+            return
+        button.toggle_dragging()
+        pygame.mouse.set_visible(True)
+        button.return_to_starting_point()
+        self._score_tracker.log_wrong_answer()
 
     def _handle_correct_answer(self):
         """Do a set of actions when the player answers correctly.
