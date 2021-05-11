@@ -11,14 +11,6 @@ class TextDisplayer:
     def __init__(self, window):
         self._window = window
 
-    def draw_info(self):
-        """Draw a short info text to the bottom of the game view.
-        """
-
-        info_text = "Try to make the bubble stop before it reaches the right edge."
-        font = pygame.font.SysFont('ptmono', 20)
-        self._window.blit(font.render(info_text, True, (0, 0, 0)), (210, 460))
-
     def draw_scores(self, current_score):
         """Draw score tracker to the top left corner of the game view.
         """
