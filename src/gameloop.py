@@ -64,7 +64,9 @@ class GameLoop:
 
                 for button in self._buttons:
                     if button.is_being_dragged:
-                        self._renderer.handle_dragging(button)
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button.x = mouse_x - 50
+                        button.y = mouse_y - 25
                         break
 
             pygame.time.delay(5)

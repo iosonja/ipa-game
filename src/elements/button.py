@@ -14,6 +14,9 @@ class Button:
     def get_image(self):
         return self._image
 
+    def update_collision_box(self):
+        self.collision_box = pygame.rect.Rect(self.x, self.y, 200, 50)
+
     def toggle_dragging(self):
         self.is_being_dragged = not self.is_being_dragged
 

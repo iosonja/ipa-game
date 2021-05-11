@@ -24,7 +24,7 @@ class Renderer:
         self._text_displayer.draw_scores(score)
         for button in buttons:
             self._window.blit(button.get_image(), (button.x, button.y))
-            button.collision_box = pygame.rect.Rect(button.x, button.y, 200, 50)
+            button.update_collision_box()
         pygame.display.update()
 
     def show_end_banner(self, score):
@@ -35,9 +35,4 @@ class Renderer:
         self._text_displayer.draw_game_over(score)
         pygame.display.update()
 
-    def handle_dragging(self, button):
-        if button.collision_box.collidepoint(pygame.mouse.get_pos()):
-            mouse_x, mouse_y = pygame.mouse.get_pos()
-            button.x = mouse_x - 50
-            button.y = mouse_y - 25
 
