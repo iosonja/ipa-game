@@ -13,11 +13,11 @@ class SymbolTracker:
     """
 
     def __init__(self):
-        self._remaining_symbols = {'src/assets/affricate0.png': pygame.K_a,
-                                   'src/assets/approximant0.png': pygame.K_x,
-                                   'src/assets/fricative0.png': pygame.K_f,
-                                   'src/assets/nasal0.png': pygame.K_n,
-                                   'src/assets/plosive0.png': pygame.K_p}
+        self._remaining_symbols = {'src/assets/symbol_images/affricate0.png': pygame.K_a,
+                                   'src/assets/symbol_images/approximant0.png': pygame.K_x,
+                                   'src/assets/symbol_images/fricative0.png': pygame.K_f,
+                                   'src/assets/symbol_images/nasal0.png': pygame.K_n,
+                                   'src/assets/symbol_images/plosive0.png': pygame.K_p}
         self._classified_symbols = []
         self._current_symbol_file = None
         self._current_key = None
