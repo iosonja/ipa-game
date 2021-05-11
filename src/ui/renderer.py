@@ -12,7 +12,7 @@ class Renderer:
         self._background_color = background_color
         self._text_displayer = TextDisplayer(self._window)
 
-    def redraw(self, bubble, buttons, score):
+    def redraw(self, bubble, buttons, score, active_button):
         """Update the playing view when the game is still on.
 
         Attributes:
@@ -25,6 +25,8 @@ class Renderer:
         for button in buttons:
             self._window.blit(button.get_image(), (button.x, button.y))
             button.update_collision_box()
+        self._window.blit(active_button.get_image(),
+                          (active_button.x, active_button.y))
         pygame.display.update()
 
     def show_end_banner(self, score):
@@ -34,5 +36,3 @@ class Renderer:
         self._window.fill(self._background_color)
         self._text_displayer.draw_game_over(score)
         pygame.display.update()
-
-

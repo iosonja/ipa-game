@@ -31,6 +31,7 @@ class GameLoop:
         self._symbol_tracker = symbol_tracker
         self._bubble = Bubble(self._symbol_tracker)
         self._buttons = self._list_buttons()
+        self._active_button = self._buttons[0]
 
     def _list_buttons(self):
         return [
@@ -60,10 +61,11 @@ class GameLoop:
                     self._bubble = Bubble(self._symbol_tracker)
                 self._bubble.move(1)
                 self._renderer.redraw(
-                    self._bubble, self._buttons, self._score_tracker.current_score)
+                    self._bubble, self._buttons, self._score_tracker.current_score, self._active_button)
 
                 for button in self._buttons:
                     if button.is_being_dragged:
+                        self._active_button = button
                         mouse_x, mouse_y = pygame.mouse.get_pos()
                         button.x = mouse_x - 50
                         button.y = mouse_y - 25
