@@ -1,6 +1,7 @@
 import sys
 import pygame
-from bubble import Bubble
+from elements.bubble import Bubble
+from elements.button import Button
 
 
 class GameLoop:
@@ -29,7 +30,16 @@ class GameLoop:
         self._score_tracker = score_tracker
         self._symbol_tracker = symbol_tracker
         self._bubble = Bubble(self._symbol_tracker)
-        self.dragged = False
+        self._buttons = self._list_buttons()
+
+    def _list_buttons(self):
+        return [
+            Button(20, 'src/assets/button_images/affricate.png'),
+            Button(260, 'src/assets/button_images/approximant.png'),
+            Button(500, 'src/assets/button_images/fricative.png'),
+            Button(740, 'src/assets/button_images/nasal.png'),
+            Button(980, 'src/assets/button_images/plosive.png')
+        ]
 
     def start(self):
         """This method contains the main loop. It repeatedly calls for
@@ -50,10 +60,12 @@ class GameLoop:
                     self._bubble = Bubble(self._symbol_tracker)
                 self._bubble.move(1)
                 self._renderer.redraw(
-                    self._bubble, self._score_tracker.current_score)
+                    self._bubble, self._buttons, self._score_tracker.current_score)
 
-                if self.dragged:
-                    self._renderer.handle_dragging()
+                for button in self._buttons:
+                    if button.is_being_dragged:
+                        self._renderer.handle_dragging(button)
+                        break
 
             pygame.time.delay(5)
 
@@ -66,6 +78,21 @@ class GameLoop:
 
         if not self._score_tracker.game_over():
             self._bubble = Bubble(self._symbol_tracker)
+
+    def _grab_button(self):
+        for button in self._buttons:
+            if button.collision_box.collidepoint(pygame.mouse.get_pos()):
+                button.toggle_dragging()
+                pygame.mouse.set_visible(False)
+                break
+
+    def _release_button(self):
+        for button in self._buttons:
+            if button.collision_box.collidepoint(pygame.mouse.get_pos()):
+                button.toggle_dragging()
+                button.return_to_starting_point()
+                pygame.mouse.set_visible(True)
+                break
 
     def _handle_events(self):
         """Choose an action based on user input.
@@ -80,8 +107,6 @@ class GameLoop:
                     self._handle_correct_answer()
                 self._score_tracker.log_wrong_answer()
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                self.dragged = True
-                pygame.mouse.set_visible(False)
+                self._grab_button()
             elif event.type == pygame.MOUSEBUTTONUP:
-                self.dragged = False
-                pygame.mouse.set_visible(True)
+                self._release_button()
