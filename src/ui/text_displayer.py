@@ -29,3 +29,12 @@ class TextDisplayer:
         font2 = pygame.font.SysFont('ptmono', 30)
         self._window.blit(font1.render(text1, True, (0, 0, 0)), (500, 200))
         self._window.blit(font2.render(text2, True, (0, 0, 0)), (370, 240))
+
+    def draw_answer_text(self):
+        font = pygame.font.SysFont('ptmono', 20)
+        answer_text = "Show the answer"
+        self._window.blit(font.render(answer_text, True, (0, 0, 0)), (1005, 5))
+
+    def reveal_answer(self, answer):
+        font = pygame.font.SysFont('ptmono', 20)
+        self._window.blit(font.render(answer, True, (0, 0, 0)), (1005, 5))

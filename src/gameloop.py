@@ -32,14 +32,15 @@ class GameLoop:
         self._bubble = Bubble(self._symbol_tracker)
         self._buttons = self._list_buttons()
         self._active_button = self._buttons[0]
+        self._answer_toggler = pygame.rect.Rect(1000, 0, 200, 40)
 
     def _list_buttons(self):
         return [
-            Button(20, pygame.K_a, 'src/assets/button_images/affricate.png'),
-            Button(260, pygame.K_x, 'src/assets/button_images/approximant.png'),
-            Button(500, pygame.K_f, 'src/assets/button_images/fricative.png'),
-            Button(740, pygame.K_n, 'src/assets/button_images/nasal.png'),
-            Button(980, pygame.K_p, 'src/assets/button_images/plosive.png')
+            Button(20, "affricate", 'src/assets/button_images/affricate.png'),
+            Button(260, "approximant", 'src/assets/button_images/approximant.png'),
+            Button(500, "fricative", 'src/assets/button_images/fricative.png'),
+            Button(740, "nasal", 'src/assets/button_images/nasal.png'),
+            Button(980, "plosive", 'src/assets/button_images/plosive.png')
         ]
 
     def start(self):
@@ -68,8 +69,9 @@ class GameLoop:
                     self._handle_drag(button)
                     break
 
-            self._renderer.redraw(
-                self._bubble, self._buttons, self._score_tracker.current_score, self._active_button)
+            self._renderer.redraw(self._bubble, self._buttons,
+                                  self._score_tracker.current_score,
+                                  self._active_button, self._answer_toggler)
 
             pygame.time.delay(5)
 
@@ -101,12 +103,14 @@ class GameLoop:
         if not self._score_tracker.game_over():
             self._bubble = Bubble(self._symbol_tracker)
 
-    def _grab_button(self):
+    def _click(self):
         for button in self._buttons:
             if button.collision_box.collidepoint(pygame.mouse.get_pos()):
                 button.toggle_dragging()
                 pygame.mouse.set_visible(False)
                 break
+        if self._answer_toggler.collidepoint(pygame.mouse.get_pos()):
+            self._bubble.toggle_answer_displaying()
 
     def _release_button(self):
         for button in self._buttons:
@@ -129,6 +133,6 @@ class GameLoop:
                     self._handle_correct_answer()
                 self._score_tracker.log_wrong_answer()
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                self._grab_button()
+                self._click()
             elif event.type == pygame.MOUSEBUTTONUP:
                 self._release_button()

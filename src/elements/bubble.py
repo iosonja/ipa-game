@@ -21,10 +21,7 @@ class Bubble:
         self.key = symbol_tracker.give_key()
         self.symbol_image = pygame.image.load(self.symbol)
         self.collision_box = pygame.rect.Rect(self.x, self.y, 100, 100)
-
-        # The following doesn't work, it prints everything after game has ended
-        print("New bubble was created, press {} to make a new one!".format(
-            chr(self.key).upper()))
+        self.display_answer = False
 
     def update_collision_box(self):
         self.collision_box = pygame.rect.Rect(self.x, self.y, 100, 100)
@@ -36,3 +33,6 @@ class Bubble:
             amount (int): how much and to which direction the bubble moves
         """
         self.x += amount
+
+    def toggle_answer_displaying(self):
+        self.display_answer = not self.display_answer
