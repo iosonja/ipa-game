@@ -32,4 +32,4 @@
 | 14/5/2021 | 3         | Add a button for showing the answer|
 | 15/5/2021 | 1         | Add text field for nicknames       |
 |           | 3         | Create & configure top scores database|
-|  **all**  | **55**    |                                    |
+|  **all**  | **56**    |                                    |
