@@ -29,4 +29,5 @@
 |           | 1         | Writing automated tests            |
 | 9/5/2021  | 1         | Draw button images                 |
 | 11/5/2021 | 5         | Implement buttons and dragging     |
-|  **all**  | **49**    |                                    |
+| 14/5/2021 | 3         | Add a button for showing the answer|
+|  **all**  | **52**    |                                    |
