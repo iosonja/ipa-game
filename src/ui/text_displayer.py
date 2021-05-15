@@ -47,5 +47,10 @@ class TextDisplayer:
         self._window.blit(font.render(answer, True, (0, 0, 0)), (1005, 5))
 
     def draw_top_scores(self, scores):
-        font = pygame.font.SysFont(self._typeface, 25)
-        self._window.blit(font.render(scores, True, (0, 0, 0)), (10, 10))
+        font = pygame.font.SysFont(self._typeface, 30)
+        self._window.blit(font.render("Top Scores", True, (0, 0, 0)), (500, 150))
+        for i in range(5):
+            name_string = str(i + 1) + " " + scores[i][0]
+            score_string = str(scores[i][1]) + " points"
+            self._window.blit(font.render(name_string, True, (0, 0, 0)), (310, (200 + (i * 30))))
+            self._window.blit(font.render(score_string, True, (0, 0, 0)), (630, (200 + (i * 30))))

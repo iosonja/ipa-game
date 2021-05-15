@@ -102,9 +102,9 @@ class GameLoop:
             self._renderer.display_nickname_field(nickname)
 
     def _loop_scores_view(self):
-        scores = self._db.execute("SELECT * FROM Scores").fetchall()
+        scores = self._db.execute("SELECT nickname,score FROM Scores ORDER BY score DESC LIMIT 5").fetchall()
         self._renderer.reset_view()
-        self._renderer.get_text_displayer().draw_top_scores(str(scores))
+        self._renderer.get_text_displayer().draw_top_scores(scores)
         pygame.display.update()
         while True:
             for event in self._event_queue.get():
