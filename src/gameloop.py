@@ -1,6 +1,6 @@
 import sys
-import sqlite3
 import pygame
+from database_connection import DatabaseConnection
 from elements.bubble import Bubble
 from elements.button import Button
 
@@ -34,7 +34,7 @@ class GameLoop:
         self._buttons = self._list_buttons()
         self._active_button = self._buttons[0]
         self._answer_toggler = pygame.rect.Rect(1000, 0, 200, 40)
-        self._db = sqlite3.connect("dummy_scores.db")
+        self._db_connection = DatabaseConnection()
 
     @staticmethod
     def _list_buttons():
@@ -88,9 +88,7 @@ class GameLoop:
                     if event.key == pygame.K_BACKSPACE and nickname is not None:
                         nickname = nickname[:-1]
                     if event.key == pygame.K_RETURN:
-                        params = (nickname, self._score_tracker.current_score)
-                        self._db.execute(
-                            "INSERT INTO Scores (nickname,score) VALUES (?, ?);", params)
+                        self._db_connection.add_score(nickname, self._score_tracker.current_score)
                         self._loop_scores_view()
                     if len(nickname) > 15:
                         continue
@@ -102,11 +100,9 @@ class GameLoop:
             self._renderer.display_nickname_field(nickname)
 
     def _loop_scores_view(self):
-        scores = self._db.execute("SELECT nickname,score FROM Scores ORDER BY score DESC LIMIT 5;").fetchall()
-        self._db.commit()
-        self._db.close()
+        top_scores = self._db_connection.fetch_top_scores()
         self._renderer.reset_view()
-        self._renderer.get_text_displayer().draw_top_scores(scores)
+        self._renderer.get_text_displayer().draw_top_scores(top_scores)
         pygame.display.update()
         while True:
             for event in self._event_queue.get():
