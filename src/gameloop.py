@@ -34,7 +34,8 @@ class GameLoop:
         self._active_button = self._buttons[0]
         self._answer_toggler = pygame.rect.Rect(1000, 0, 200, 40)
 
-    def _list_buttons(self):
+    @staticmethod
+    def _list_buttons():
         return [
             Button(20, "affricate", 'src/assets/button_images/affricate.png'),
             Button(260, "approximant", 'src/assets/button_images/approximant.png'),
@@ -55,8 +56,7 @@ class GameLoop:
             self._handle_events()
 
             if self._score_tracker.game_over():
-                self._renderer.show_end_banner(
-                    self._score_tracker.current_score)
+                self._loop_game_over_view()
                 continue
 
             if self._bubble.x >= self._window_width + 50:
@@ -74,6 +74,23 @@ class GameLoop:
                                   self._active_button, self._answer_toggler)
 
             pygame.time.delay(5)
+
+    def _loop_game_over_view(self):
+        nickname = ""
+        while True:
+            for event in self._event_queue.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_BACKSPACE and nickname is not None:
+                        nickname = nickname[:-1]
+                    if nickname != "":
+                        nickname = nickname + event.unicode
+                    else:
+                        nickname = event.unicode
+            self._renderer.show_end_banner(self._score_tracker.current_score)
+            self._renderer.display_nickname_field(nickname)
 
     def _handle_drag(self, button):
         self._active_button = button

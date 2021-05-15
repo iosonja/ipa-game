@@ -27,7 +27,7 @@ class Renderer:
             button.update_collision_box()
         self._window.blit(active_button.get_image(),
                           (active_button.x, active_button.y))
-        self._show_answer_element()
+        self._show_answer_element(bubble, answer_button)
 
         pygame.display.update()
 
@@ -37,9 +37,14 @@ class Renderer:
 
         self._window.fill(self._background_color)
         self._text_displayer.draw_game_over(score)
+
+    def display_nickname_field(self, nickname):
+        input_rect = pygame.Rect(500, 250, 200, 30)
+        pygame.draw.rect(self._window, (0, 0, 0), input_rect, 1)
+        self._text_displayer.draw_nickname(nickname)
         pygame.display.update()
 
-    def _show_answer_element(self):
+    def _show_answer_element(self, bubble, answer_button):
         pygame.draw.rect(self._window, (0, 0, 0), answer_button, 1)
         if bubble.display_answer:
             self._text_displayer.reveal_answer(bubble.key)

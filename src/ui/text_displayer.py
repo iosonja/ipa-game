@@ -27,8 +27,12 @@ class TextDisplayer:
         text2 = "You finished with {} points.".format(current_score)
         font1 = pygame.font.SysFont('ptmono', 35)
         font2 = pygame.font.SysFont('ptmono', 30)
-        self._window.blit(font1.render(text1, True, (0, 0, 0)), (500, 200))
-        self._window.blit(font2.render(text2, True, (0, 0, 0)), (370, 240))
+        self._window.blit(font1.render(text1, True, (0, 0, 0)), (500, 170))
+        self._window.blit(font2.render(text2, True, (0, 0, 0)), (370, 210))
+
+    def draw_nickname(self, nickname):
+        font = pygame.font.SysFont('ptmono', 20)
+        self._window.blit(font.render(nickname, True, (0, 0, 0)), (502, 251))
 
     def draw_answer_text(self):
         font = pygame.font.SysFont('ptmono', 20)
