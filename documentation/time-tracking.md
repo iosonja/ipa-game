@@ -30,4 +30,6 @@
 | 9/5/2021  | 1         | Draw button images                 |
 | 11/5/2021 | 5         | Implement buttons and dragging     |
 | 14/5/2021 | 3         | Add a button for showing the answer|
-|  **all**  | **52**    |                                    |
+| 15/5/2021 | 1         | Add text field for nicknames       |
+|           | 2         | Create a top score database        |
+|  **all**  | **55**    |                                    |
