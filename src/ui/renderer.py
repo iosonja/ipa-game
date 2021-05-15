@@ -39,7 +39,7 @@ class Renderer:
         self._text_displayer.draw_game_over(score)
 
     def display_nickname_field(self, nickname):
-        input_rect = pygame.Rect(500, 250, 200, 30)
+        input_rect = pygame.Rect(500, 280, 200, 30)
         pygame.draw.rect(self._window, (0, 0, 0), input_rect, 1)
         self._text_displayer.draw_nickname(nickname)
         pygame.display.update()
