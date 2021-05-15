@@ -12,6 +12,12 @@ class Renderer:
         self._background_color = background_color
         self._text_displayer = TextDisplayer(self._window)
 
+    def get_text_displayer(self):
+        return self._text_displayer
+
+    def reset_view(self):
+        self._window.fill(self._background_color)
+
     def redraw(self, bubble, buttons, score, active_button, answer_button):
         """Update the playing view when the game is still on.
 

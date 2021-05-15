@@ -44,3 +44,7 @@ class TextDisplayer:
     def reveal_answer(self, answer):
         font = pygame.font.SysFont('ptmono', 20)
         self._window.blit(font.render(answer, True, (0, 0, 0)), (1005, 5))
+
+    def draw_top_scores(self, scores):
+        font = pygame.font.SysFont('ptmono', 25)
+        self._window.blit(font.render(scores, True, (0, 0, 0)), (10, 10))

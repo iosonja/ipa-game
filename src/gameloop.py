@@ -85,12 +85,29 @@ class GameLoop:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_BACKSPACE and nickname is not None:
                         nickname = nickname[:-1]
-                    if nickname != "":
+                    if event.key == pygame.K_RETURN:
+                        # write new score in scores db
+                        # fetch top scores
+                        # show top scores list
+                        self._loop_scores_view()
+                    if len(nickname) > 15:
+                        continue
+                    elif nickname != "":
                         nickname = nickname + event.unicode
                     else:
                         nickname = event.unicode
             self._renderer.show_end_banner(self._score_tracker.current_score)
             self._renderer.display_nickname_field(nickname)
+
+    def _loop_scores_view(self):
+        self._renderer.reset_view()
+        self._renderer.get_text_displayer().draw_top_scores("scores will be here")
+        pygame.display.update()
+        while True:
+            for event in self._event_queue.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
 
     def _handle_drag(self, button):
         self._active_button = button
