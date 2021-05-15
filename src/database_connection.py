@@ -13,6 +13,7 @@ class DatabaseConnection:
         self._connection.commit()
 
     def fetch_top_scores(self):
-        top_scores = self._connection.execute("SELECT nickname,score FROM Scores ORDER BY score DESC LIMIT 5;").fetchall()
+        top_scores = self._connection.execute(
+            "SELECT nickname,score FROM Scores ORDER BY score DESC LIMIT 5;").fetchall()
         self._connection.close()
         return top_scores

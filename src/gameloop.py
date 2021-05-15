@@ -88,7 +88,8 @@ class GameLoop:
                     if event.key == pygame.K_BACKSPACE and nickname is not None:
                         nickname = nickname[:-1]
                     if event.key == pygame.K_RETURN:
-                        self._db_connection.add_score(nickname, self._score_tracker.current_score)
+                        self._db_connection.add_score(
+                            nickname, self._score_tracker.current_score)
                         self._loop_scores_view()
                     if len(nickname) > 15:
                         continue
