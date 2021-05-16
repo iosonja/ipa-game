@@ -18,10 +18,13 @@ class DatabaseConnection:
             score (int): New score number.
         """
 
-        params = (nickname, score)
-        self._connection.execute(
-            "INSERT INTO Scores (nickname,score) VALUES (?, ?);", params)
-        self._connection.commit()
+        try:
+            params = (nickname, score)
+            self._connection.execute(
+                "INSERT INTO Scores (nickname,score) VALUES (?, ?);", params)
+            self._connection.commit()
+        except e:
+            print("An error occurred when inserting data: ", e)
 
     def fetch_top_scores(self):
         """Fetch five results with the biggest scores from the database.
@@ -30,8 +33,14 @@ class DatabaseConnection:
             list: list containing 5 tuples with nickname and score in them.
         """
 
-        top_scores = self._connection.execute(
-            "SELECT nickname,score FROM Scores ORDER BY score DESC LIMIT 5;"
-        ).fetchall()
+        try:
+            top_scores = self._connection.execute(
+                "SELECT nickname,score FROM Scores ORDER BY score DESC LIMIT 5;"
+            ).fetchall()
+            return top_scores
+        except e:
+            print("An error occurred when fetching score data: ", e)
+            return None
+
+    def close_connection(self):
         self._connection.close()
-        return top_scores

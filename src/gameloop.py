@@ -123,6 +123,7 @@ class GameLoop:
         """
 
         top_scores = self._db_connection.fetch_top_scores()
+        self._db_connection.close_connection()
         self._renderer.reset_view()
         self._renderer.get_text_displayer().draw_top_scores(top_scores)
         pygame.display.update()
