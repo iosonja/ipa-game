@@ -195,7 +195,7 @@ class GameLoop:
         """
 
         for button in self._buttons:
-            if button.collision_box.collidepoint(pygame.mouse.get_pos()):
+            if button.is_being_dragged:
                 button.toggle_dragging()
                 button.return_to_starting_point()
                 pygame.mouse.set_visible(True)
