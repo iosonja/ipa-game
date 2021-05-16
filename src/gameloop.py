@@ -37,7 +37,6 @@ class GameLoop:
         self._bubble = Bubble(self._symbol_tracker)
         self._buttons = self._list_buttons()
         self._active_button = self._buttons[0]
-        self._answer_toggler = pygame.rect.Rect(1000, 0, 200, 40)
 
     @staticmethod
     def _list_buttons():
@@ -82,7 +81,7 @@ class GameLoop:
 
             self._renderer.redraw(self._bubble, self._buttons,
                                   self._score_tracker.current_score,
-                                  self._active_button, self._answer_toggler)
+                                  self._active_button)
 
             pygame.time.delay(5)
 
@@ -187,7 +186,7 @@ class GameLoop:
                 button.toggle_dragging()
                 pygame.mouse.set_visible(False)
                 break
-        if self._answer_toggler.collidepoint(pygame.mouse.get_pos()):
+        if self._renderer.get_answer_area().collidepoint(pygame.mouse.get_pos()):
             self._bubble.toggle_answer_displaying()
 
     def _release_button(self):

@@ -29,7 +29,7 @@ class DatabaseConnection:
         Returns:
             list: list containing 5 tuples with nickname and score in them.
         """
-        
+
         top_scores = self._connection.execute(
             "SELECT nickname,score FROM Scores ORDER BY score DESC LIMIT 5;"
         ).fetchall()
