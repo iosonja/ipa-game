@@ -134,7 +134,8 @@ class GameLoop:
                     sys.exit()
 
     def _handle_drag(self, button):
-        """Move a button and its collision box according to mouse movements. Check for possible collisions.
+        """Move a button and its collision box according to mouse movements.
+        Check for possible collisions.
 
         Args:
             button (Button): The button that is being dragged.
