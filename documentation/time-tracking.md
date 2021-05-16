@@ -32,4 +32,6 @@
 | 14/5/2021 | 3         | Add a button for showing the answer|
 | 15/5/2021 | 1         | Add text field for nicknames       |
 |           | 3         | Create & configure top scores database|
-|  **all**  | **56**    |                                    |
+| 16/5/2021 | 3         | Testing                            |
+|           | 5         | Doocstrings & document updates     |
+|  **all**  | **64**    |                                    |
