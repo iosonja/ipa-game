@@ -5,6 +5,14 @@ The symbols that appear in the game will describe consonants that appear in the 
 
 [Release for week 6](https://github.com/iosonja/ot-harjoitustyo/releases/tag/viikko6)
 
+## Documentation
+
+[Instruction Manual](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/manual.md)<br>
+[Requirements Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/requirements-document.md)<br>
+[Architecture Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/architecture.md)<br>
+[Testing Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/testing_document.md)<br>
+[Time Tracking](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/time-tracking.md)<br>
+
 ## Start using the app
 The app has been built using Python version 3.6.0. Versions below that may not work as expected.
 
@@ -12,7 +20,8 @@ The app has been built using Python version 3.6.0. Versions below that may not w
 ```
 poetry install
 ```
-2. Start the app with the command:
+2. To use the existing mock database, keep the `.env` database filename intact. To use a different database, change the value of DATABASE_FILENAME.
+3. Start the app with the command:
 ```
 poetry run invoke start
 ```
@@ -36,11 +45,11 @@ After entering the nickname, top 5 scores are shown. The game has 24 rounds.
 
 <img width="500" alt="Screenshot 2021-05-16 at 15 43 17" src="https://user-images.githubusercontent.com/40118812/118397600-84bb1900-b65d-11eb-8b94-d135cbbb7320.png">
 
-In order to make trying the application easier, there is a button in the top right corner that displays the correct
+In order to make testing the application easier, there is a button in the top right corner that displays the correct
 answer when clicked.
 
 
-## Command line operations for developers
+## Command line operations
 Start the app:
 ```
 poetry run invoke start
@@ -63,11 +72,3 @@ Reformat the code using autopep8:
 ```
 poetry run invoke format
 ```
-
-## Documentation
-
-[Instruction Manual](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/manual.md)<br>
-[Requirements Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/requirements-document.md)<br>
-[Architecture Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/architecture.md)<br>
-[Time Tracking](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/time-tracking.md)<br>
-[Testing Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/testing_document.md)
