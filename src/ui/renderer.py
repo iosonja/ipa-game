@@ -74,15 +74,17 @@ class Renderer:
 
     def _show_answer_element(self, bubble):
         """Render a rectangle in the top right corner. Depending on the state
-        of "bubble's" reveal_answer attribute, ask text displayer to show
-        either "bubble's" key or a static text.
+        of bubble's reveal_answer attribute, ask text displayer to show
+        either bubble's key or a static text.
 
 
         Args:
             bubble (Bubble): The bubble that's currently in the window.
         """
+
         pygame.draw.rect(self._window, (0, 0, 0), self._answer_area, 1)
         if bubble.display_answer:
-            self._text_displayer.reveal_answer(bubble.key)
+            text = bubble.key
         else:
-            self._text_displayer.draw_answer_text()
+            text = "Show the answer"
+        self._text_displayer.draw_answer_text(text)
