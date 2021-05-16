@@ -6,7 +6,8 @@
 ```
 poetry install
 ```
-2. Start the app with the command:
+2. To use the existing mock database, keep the `.env` database filename intact. To use a different database, change the value of DATABASE_FILENAME.
+3. Start the app with the command:
 ```
 poetry run invoke start
 ```
