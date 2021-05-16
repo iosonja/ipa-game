@@ -4,9 +4,6 @@ The player needs to classify symbols of the International Phonetic Alphabet (IPA
 The symbols that appear in the game will describe consonants that appear in the English language.
 
 [Release for week 6](https://github.com/iosonja/ot-harjoitustyo/releases/tag/viikko6)
-<img width="1312" alt="Screenshot 2021-05-11 at 18 32 59" src="https://user-images.githubusercontent.com/40118812/117843303-5ddc9b80-b287-11eb-988d-19cc7213b500.png">
-
-
 
 ## Start using the app
 The app has been built using Python version 3.6.0. Versions below that may not work as expected.
@@ -24,18 +21,23 @@ poetry run invoke start
 
 ## Play the game
 Try to stop each bubble from reaching the right edge of the screen. The bubble disappears when the symbol displayed
-on it has been classified correctly with a keystroke. Each correct keystroke awards 10 points and each wrong keystroke
-results in a 2 point penalty. After each symbol has been correctly classified, the game ends with a banner displaying
-the final score. Currently the game only goes through 5 of the 24 symbols so that testing the game doesn't take too long.
-#### Correct answers (symbol on the left, keystroke on the right):
-```
-f => F (stands for fricative)
-p => P (stands for plosive)
-ʈʃ => A (stands for affricate)
-m => N (stands for nasal)
-r => X (stands for approximant)
-```
+on it has been classified correctly by dragging its corresponding class button until it reaches the bubble. Each correct
+collision awards 10 points and each wrong collision results in a 2 point penalty. The player can try again after a
+failed attempt.
 
+<img width="500" alt="Screenshot 2021-05-16 at 15 30 40" src="https://user-images.githubusercontent.com/40118812/118397512-0494b380-b65d-11eb-9e38-9a454709d709.png">
+
+After each symbol has been correctly classified, the game ends with a banner displaying the final score
+and asking for a nickname.
+
+<img width="500" alt="Screenshot 2021-05-16 at 15 43 06" src="https://user-images.githubusercontent.com/40118812/118397598-81c02880-b65d-11eb-9e18-dcdaf6923679.png">
+
+After entering the nickname, top 5 scores are shown. The game has 24 rounds.
+
+<img width="500" alt="Screenshot 2021-05-16 at 15 43 17" src="https://user-images.githubusercontent.com/40118812/118397600-84bb1900-b65d-11eb-8b94-d135cbbb7320.png">
+
+In order to make trying the application easier, there is a button in the top right corner that displays the correct
+answer when clicked.
 
 
 ## Command line operations for developers
