@@ -67,8 +67,8 @@ class GameLoop:
             self._handle_events()
 
             if self._score_tracker.game_over():
+                pygame.mouse.set_visible(True)
                 self._loop_game_over_view()
-                continue
 
             if self._bubble.x >= self._window_width + 50:
                 self._bubble = Bubble(self._symbol_tracker)
@@ -104,13 +104,14 @@ class GameLoop:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_BACKSPACE and nickname is not None:
                         nickname = nickname[:-1]
+                        continue
                     if event.key == pygame.K_RETURN:
                         self._db_connection.add_score(
                             nickname, self._score_tracker.current_score)
                         self._loop_scores_view()
                     if len(nickname) > 15:
                         continue
-                    elif nickname != "":
+                    if nickname != "":
                         nickname = nickname + event.unicode
                     else:
                         nickname = event.unicode
