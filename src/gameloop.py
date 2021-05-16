@@ -41,6 +41,12 @@ class GameLoop:
 
     @staticmethod
     def _list_buttons():
+        """This method creates the five button objects used in the game.
+
+        Returns:
+            list: five new Button objects
+        """
+
         return [
             Button(20, "affricate", 'src/assets/button_images/affricate.png'),
             Button(260, "approximant", 'src/assets/button_images/approximant.png'),
@@ -51,10 +57,10 @@ class GameLoop:
 
     def start(self):
         """This method contains the main loop. It repeatedly calls for
-        _handle_events() to react to user input. It moves the current bubble's
-        position forward with each iteration, unless the bubble has reached the
-        right edge. In that case it creates a new bubble and places it to the
-        left side of the window.
+        _handle_events() to react to user input. It moves the current bubble
+        forward and creates a new one when necessary. It checks for button
+        dragging. When the game is over, it throws the program to a "game over"
+        -loop
         """
 
         while True:
@@ -81,6 +87,14 @@ class GameLoop:
             pygame.time.delay(5)
 
     def _loop_game_over_view(self):
+        """Receive input for typing a nickname and update a game over -view to
+        display the nickname being typed.
+        """
+
+        # NB: This method should be divided in 2 parts, but so far I haven't
+        # been able to solve a bug in moving nickname between a rendering
+        # method and an input receiving method.
+
         nickname = ""
         while True:
             for event in self._event_queue.get():
@@ -104,6 +118,10 @@ class GameLoop:
             self._renderer.display_nickname_field(nickname)
 
     def _loop_scores_view(self):
+        """Show a static top scores -view that doesn't get updated. Keep
+        listening to user input for closing the program.
+        """
+
         top_scores = self._db_connection.fetch_top_scores()
         self._renderer.reset_view()
         self._renderer.get_text_displayer().draw_top_scores(top_scores)
@@ -115,6 +133,12 @@ class GameLoop:
                     sys.exit()
 
     def _handle_drag(self, button):
+        """Move a button and its collision box according to mouse movements. Check for possible collisions.
+
+        Args:
+            button (Button): The button that is being dragged.
+        """
+
         self._active_button = button
         mouse_x, mouse_y = pygame.mouse.get_pos()
         button.x = mouse_x - 50
@@ -124,6 +148,14 @@ class GameLoop:
             self._handle_drag_collision(button)
 
     def _handle_drag_collision(self, button):
+        """This method is called when a button collides with a bubble.
+        Check if the elements match, i.e. the answer was correct. If not, force
+        the button to return to its starting point.
+
+        Args:
+            button (Button): The button that has collided.
+        """
+
         if button.key == self._bubble.key:
             self._handle_correct_answer()
             return
@@ -143,6 +175,11 @@ class GameLoop:
             self._bubble = Bubble(self._symbol_tracker)
 
     def _click(self):
+        """This method is called when the player has clicked the mouse.
+        Check if the click happened on top of a button or the answer toggler
+        and call for appropriate actions.
+        """
+
         for button in self._buttons:
             if button.collision_box.collidepoint(pygame.mouse.get_pos()):
                 button.toggle_dragging()
@@ -152,6 +189,10 @@ class GameLoop:
             self._bubble.toggle_answer_displaying()
 
     def _release_button(self):
+        """This method is called when the player has let go of the mouse.
+        If the mouse was dragging a button, the button is returned to start.
+        """
+
         for button in self._buttons:
             if button.collision_box.collidepoint(pygame.mouse.get_pos()):
                 button.toggle_dragging()
