@@ -6,30 +6,30 @@ from services.event_queue import EventQueue
 from services.score_tracker import ScoreTracker
 from services.symbol_tracker import SymbolTracker
 
-WINDOW_WIDTH = 1200
-WINDOW_HEIGHT = 500
-BACKGROUND_COLOR = (212, 220, 255)
-symbol_tracker = SymbolTracker()
-MAX_CORRECT_ANSWERS = symbol_tracker.get_nbr_of_remaining_symbols()
-score_tracker = ScoreTracker(MAX_CORRECT_ANSWERS)
-DATABASE_CONNECTION = DatabaseConnection()
-
 
 def main():
     """This function creates the main components of the game. It initializes
     pygame and starts the game loop.
     """
 
-    window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+    window_width = 1200
+    window_height = 500
+    window = pygame.display.set_mode((window_width, window_height))
     pygame.display.set_caption("IPA game")
 
-    renderer = Renderer(window, WINDOW_WIDTH, BACKGROUND_COLOR)
+    background_color = (212, 220, 255)
+    renderer = Renderer(window, window_width, background_color)
+
+    database_connection = DatabaseConnection()
     event_queue = EventQueue()
-    loop = GameLoop(window, WINDOW_WIDTH, renderer,
-                    event_queue, score_tracker, symbol_tracker, DATABASE_CONNECTION)
+    symbol_tracker = SymbolTracker()
+    score_tracker = ScoreTracker(symbol_tracker.get_nbr_of_remaining_symbols())
+
+    gameloop = GameLoop(window, window_width, renderer,
+                        event_queue, score_tracker, symbol_tracker, database_connection)
 
     pygame.init()
-    loop.start()
+    gameloop.start()
 
 
 if __name__ == "__main__":
