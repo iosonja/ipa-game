@@ -1,6 +1,35 @@
 from random import randrange
 
 
+def _make_symbol_dict():
+    return {
+        'src/assets/symbol_images/affricate0.png': "affricate",
+        'src/assets/symbol_images/affricate1.png': "affricate",
+        'src/assets/symbol_images/approximant0.png': "approximant",
+        'src/assets/symbol_images/approximant1.png': "approximant",
+        'src/assets/symbol_images/approximant2.png': "approximant",
+        'src/assets/symbol_images/approximant3.png': "approximant",
+        'src/assets/symbol_images/approximant4.png': "approximant",
+        'src/assets/symbol_images/fricative0.png': "fricative",
+        'src/assets/symbol_images/fricative1.png': "fricative",
+        'src/assets/symbol_images/fricative2.png': "fricative",
+        'src/assets/symbol_images/fricative3.png': "fricative",
+        'src/assets/symbol_images/fricative4.png': "fricative",
+        'src/assets/symbol_images/fricative5.png': "fricative",
+        'src/assets/symbol_images/fricative6.png': "fricative",
+        'src/assets/symbol_images/fricative7.png': "fricative",
+        'src/assets/symbol_images/nasal0.png': "nasal",
+        'src/assets/symbol_images/nasal1.png': "nasal",
+        'src/assets/symbol_images/nasal2.png': "nasal",
+        'src/assets/symbol_images/plosive0.png': "plosive",
+        'src/assets/symbol_images/plosive1.png': "plosive",
+        'src/assets/symbol_images/plosive2.png': "plosive",
+        'src/assets/symbol_images/plosive3.png': "plosive",
+        'src/assets/symbol_images/plosive4.png': "plosive",
+        'src/assets/symbol_images/plosive5.png': "plosive"
+    }
+
+
 class SymbolTracker:
     """This class works as a temporary database for symbols and their keys
 
@@ -12,38 +41,10 @@ class SymbolTracker:
     """
 
     def __init__(self):
-        self._remaining_symbols = self._make_symbol_dict()
+        self._remaining_symbols = _make_symbol_dict()
         self._classified_symbols = []
         self._current_symbol_file = None
         self._current_key = None
-
-    def _make_symbol_dict(self):
-        return {
-            'src/assets/symbol_images/affricate0.png': "affricate",
-            'src/assets/symbol_images/affricate1.png': "affricate",
-            'src/assets/symbol_images/approximant0.png': "approximant",
-            'src/assets/symbol_images/approximant1.png': "approximant",
-            'src/assets/symbol_images/approximant2.png': "approximant",
-            'src/assets/symbol_images/approximant3.png': "approximant",
-            'src/assets/symbol_images/approximant4.png': "approximant",
-            'src/assets/symbol_images/fricative0.png': "fricative",
-            'src/assets/symbol_images/fricative1.png': "fricative",
-            'src/assets/symbol_images/fricative2.png': "fricative",
-            'src/assets/symbol_images/fricative3.png': "fricative",
-            'src/assets/symbol_images/fricative4.png': "fricative",
-            'src/assets/symbol_images/fricative5.png': "fricative",
-            'src/assets/symbol_images/fricative6.png': "fricative",
-            'src/assets/symbol_images/fricative7.png': "fricative",
-            'src/assets/symbol_images/nasal0.png': "nasal",
-            'src/assets/symbol_images/nasal1.png': "nasal",
-            'src/assets/symbol_images/nasal2.png': "nasal",
-            'src/assets/symbol_images/plosive0.png': "plosive",
-            'src/assets/symbol_images/plosive1.png': "plosive",
-            'src/assets/symbol_images/plosive2.png': "plosive",
-            'src/assets/symbol_images/plosive3.png': "plosive",
-            'src/assets/symbol_images/plosive4.png': "plosive",
-            'src/assets/symbol_images/plosive5.png': "plosive"
-        }
 
     def correctly_classified(self, file_path):
         """Move a symbol from remaining to classified symbols.

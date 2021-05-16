@@ -39,6 +39,7 @@ class Bubble:
         Args:
             amount (int): how much and to which direction the bubble moves
         """
+
         self.x += amount
 
     def toggle_answer_displaying(self):
