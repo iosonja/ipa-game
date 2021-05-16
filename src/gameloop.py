@@ -85,52 +85,6 @@ class GameLoop:
 
             pygame.time.delay(5)
 
-    def _loop_game_over_view(self):
-        """Receive input for typing a nickname and update a game over -view to
-        display the nickname being typed.
-        """
-
-        # NB: This method should be divided in 2 parts, but so far I haven't
-        # been able to solve a bug in moving nickname between a rendering
-        # method and an input receiving method.
-
-        nickname = ""
-        while True:
-            for event in self._event_queue.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_BACKSPACE and nickname is not None:
-                        nickname = nickname[:-1]
-                        continue
-                    if event.key == pygame.K_RETURN:
-                        self._db_connection.add_score(
-                            nickname, self._score_tracker.current_score)
-                        self._loop_scores_view()
-                    if len(nickname) > 15:
-                        continue
-                    if nickname != "":
-                        nickname = nickname + event.unicode
-                    else:
-                        nickname = event.unicode
-            self._renderer.show_end_banner(self._score_tracker.current_score)
-            self._renderer.display_nickname_field(nickname)
-
-    def _loop_scores_view(self):
-        """Show a static top scores -view that doesn't get updated. Keep
-        listening to user input for closing the program.
-        """
-
-        top_scores = self._db_connection.fetch_top_scores()
-        self._db_connection.close_connection()
-        self._renderer.show_top_scores(top_scores)
-        while True:
-            for event in self._event_queue.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-
     def _handle_drag(self, button):
         """Move a button and its collision box according to mouse movements.
         Check for possible collisions.
@@ -216,3 +170,49 @@ class GameLoop:
                 self._click()
             elif event.type == pygame.MOUSEBUTTONUP:
                 self._release_button()
+
+    def _loop_game_over_view(self):
+        """Receive input for typing a nickname and update a game over -view to
+        display the nickname being typed.
+        """
+
+        # NB: This method should be divided in 2 parts, but so far I haven't
+        # been able to solve a bug in moving nickname between a rendering
+        # method and an input receiving method.
+
+        nickname = ""
+        while True:
+            for event in self._event_queue.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_BACKSPACE and nickname is not None:
+                        nickname = nickname[:-1]
+                        continue
+                    if event.key == pygame.K_RETURN:
+                        self._db_connection.add_score(
+                            nickname, self._score_tracker.current_score)
+                        self._loop_scores_view()
+                    if len(nickname) > 15:
+                        continue
+                    if nickname != "":
+                        nickname = nickname + event.unicode
+                    else:
+                        nickname = event.unicode
+            self._renderer.show_end_banner(self._score_tracker.current_score)
+            self._renderer.display_nickname_field(nickname)
+
+    def _loop_scores_view(self):
+        """Show a static top scores -view that doesn't get updated. Keep
+        listening to user input for closing the program.
+        """
+
+        top_scores = self._db_connection.fetch_top_scores()
+        self._db_connection.close_connection()
+        self._renderer.show_top_scores(top_scores)
+        while True:
+            for event in self._event_queue.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
