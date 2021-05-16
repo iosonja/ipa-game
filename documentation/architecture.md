@@ -16,10 +16,15 @@ The UI is separated from the logic and the code in the src/ui/ folder is indepen
 
 ## Game Logic
 
-The main loop that runs the game is placed in the Gameloop class. New instances of Bubble are created and the Renderer is called to update inside the main loop.
-As one can see based on the class diagram below, the game is full of unidirectional dependencies. The diagram shows both the logic and UI parts and their folder structure.<br><br>
-![IPAgame_class_diagram](https://user-images.githubusercontent.com/40118812/117043838-66c4ee80-ad16-11eb-9aaf-591023a523bd.jpg)
+The main loop is placed in the Gameloop class. New instances of Bubble are created and the Renderer is called to update inside the main loop. There is another loop for the Game over -view and a third one for Top scores -view. The loops are separated because the tasks for each part of the game are very different. When switching from the main loop to the second loop, bubble and button elements are dropped and name typing is handled and shown on the screen instead. Switching to the third loop and Top Scores -view stops rerendering and the loop is there only for handling user input, waiting for the program to be closed.
 
-### Life cycle of the main loop
+As one can see based on the class diagram below, the game is full of unidirectional dependencies. The diagram shows both the logic and UI parts and their folder structure.<br><br>
+
+### Class Diagram
+#### NB: The image may not be displayed correctly on a screen using dark mode.
+![IPAgame_class_diagram](https://user-images.githubusercontent.com/40118812/118409526-84d60b80-b693-11eb-9c01-eb056031cab7.png)
+
+
+### Creation of the main loop
 ![Sequence Diagram_ Creating the main loop](https://user-images.githubusercontent.com/40118812/118408053-5ef93880-b68c-11eb-8dfb-53b40952ec34.png)
 
