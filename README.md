@@ -70,3 +70,4 @@ poetry run invoke format
 [Requirements Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/requirements-document.md)<br>
 [Architecture Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/architecture.md)<br>
 [Time Tracking](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/time-tracking.md)<br>
+[Testing Document](https://github.com/iosonja/ot-harjoitustyo/blob/main/documentation/testing_document.md)
