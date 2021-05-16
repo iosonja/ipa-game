@@ -3,7 +3,7 @@ IPA Game is a desktop-based game where the player needs to classify items that a
 The player needs to classify symbols of the International Phonetic Alphabet (IPA).
 The symbols that appear in the game will describe consonants that appear in the English language.
 
-[Release for week 6](https://github.com/iosonja/ot-harjoitustyo/releases/tag/viikko6)
+[Final Release](https://github.com/iosonja/ot-harjoitustyo/releases/tag/1.0)
 
 ## Documentation
 
