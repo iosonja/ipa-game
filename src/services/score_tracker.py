@@ -37,6 +37,9 @@ class ScoreTracker:
             self.current_score = 0
 
     def game_over(self):
-        """Check if the game has been played through.
+        """Check if the player has reached the max number of correct answers.
+
+        Returns:
+            bool: Maximum number of correct answers has/has not been reached.
         """
         return self.correct_answers >= self.max_correct_answers
