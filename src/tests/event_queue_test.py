@@ -1,6 +1,7 @@
 import unittest
 import pygame
 from gameloop import GameLoop
+from database_connection import DatabaseConnection
 from services.score_tracker import ScoreTracker
 from ui.renderer import Renderer
 from services.event_queue import EventQueue
@@ -14,8 +15,9 @@ class TestEventQueue(unittest.TestCase):
         renderer = Renderer(window, 50, (0, 0, 0))
         self.event_queue = EventQueue()
         symbol_tracker = SymbolTracker()
+        db_connection = DatabaseConnection()
         GameLoop(window, 50, renderer, self.event_queue,
-                 score_tracker, symbol_tracker)
+                 score_tracker, symbol_tracker, db_connection)
 
     def test_event_queue_getter_returns_data(self):
         response = self.event_queue.get()
