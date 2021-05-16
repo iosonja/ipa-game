@@ -10,6 +10,8 @@ class TestBubble(unittest.TestCase):
         self.bubble = Bubble(symbol_tracker)
 
     def test_bubble_collision_box_is_updated(self):
+        self.bubble.x = 80
+        self.bubble.y = 80
         self.bubble.update_collision_box()
         self.assertEqual(self.bubble.collision_box, pygame.rect.Rect(
             self.bubble.x, self.bubble.y, 100, 100))
