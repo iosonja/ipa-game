@@ -1,10 +1,17 @@
 ## User Interface
 
-Currently the user interface has two views:
-- playing view
-- Game over -view
+The user interface has three views:
+- Playing view
+<img width="1312" alt="Screenshot 2021-05-16 at 15 30 40" src="https://user-images.githubusercontent.com/40118812/118407653-6ae3fb00-b68a-11eb-8165-bf3492875217.png">
 
-The views are handled by the the same class, Renderer. The displayed view depends on the method of Renderer being called in the game loop.
+- Game over -view
+<img width="1312" alt="Screenshot 2021-05-16 at 15 43 06" src="https://user-images.githubusercontent.com/40118812/118407668-76372680-b68a-11eb-90b8-2df7d8560025.png">
+
+- Top Scores -view
+<img width="1312" alt="Screenshot 2021-05-16 at 15 43 17" src="https://user-images.githubusercontent.com/40118812/118407673-79caad80-b68a-11eb-87e3-bed499ebf3e2.png">
+
+
+The views are handled by instances of Renderer and TextDisplayer. The displayed view depends on the methods of Renderer and TextDisplayer being called in the game loop.
 The UI is separated from the logic and the code in the src/ui/ folder is independent of code outside of it.
 
 ## Game Logic
