@@ -28,3 +28,7 @@ As one can see based on the class diagram below, the game is full of unidirectio
 ### Creation of the main loop
 ![Sequence Diagram_ Creating the main loop](https://user-images.githubusercontent.com/40118812/118408053-5ef93880-b68c-11eb-8dfb-53b40952ec34.png)
 
+
+## Database
+
+The program utilizes an SQLite3 database for storing nicknames and scores. It's connected to the program via a DatabaseConnection object. The database file is defined in the `.env` file that's situated in the project root.
