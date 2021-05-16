@@ -21,9 +21,6 @@ class Renderer:
         self._text_displayer = TextDisplayer(self._window)
         self._answer_area = pygame.rect.Rect(1000, 0, 200, 40)
 
-    def get_text_displayer(self):
-        return self._text_displayer
-
     def get_answer_area(self):
         return self._answer_area
 
@@ -88,3 +85,13 @@ class Renderer:
         else:
             text = "Show the answer"
         self._text_displayer.draw_answer_text(text)
+
+    def show_top_scores(self, top_scores):
+        """Prepare the top scores -view
+
+        Args:
+            top_scores (list): List of five tuples containing nicknames and scores.
+        """
+        self.reset_view()
+        self._text_displayer.draw_top_scores(top_scores)
+        pygame.display.update()
