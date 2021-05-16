@@ -1,14 +1,13 @@
 import sys
 import pygame
-from database_connection import DatabaseConnection
 from elements.bubble import Bubble
 from elements.button import Button
 
 
 class GameLoop:
-    """This class if where the main loop of the game happens. There is one
-    bubble at a time in the game window: the first one is created in the
-    constructor and the next ones are created inside the main loop. The bubble
+    """This class if where the game loop happens. There is one bubble at a time
+    in the game window: the first one is created in the constructor and the
+    next ones are created inside the main loop. The bubble
     is moved forward with each iteration.
 
     Attributes:
@@ -18,11 +17,15 @@ class GameLoop:
         _event_queue: Events are held here prior to being processed.
         _score_tracker: This object tracks the player's score_tracker.
         _symbol_tracker: Temporary database for symbols and their keys.
+        _db_connection: Connection to a top scores database.
         _bubble: The bubble that is currently in the playing view.
+        _buttons: List of classification buttons' x positions, files and names.
+        _active_button: The button that is currently being dragged.
+        _answer_toggler: A button that reveals or hides the correct answer.
     """
 
     def __init__(self, window, window_width, renderer, event_queue,
-                 score_tracker, symbol_tracker):
+                 score_tracker, symbol_tracker, db_connection):
 
         self._window = window
         self._window_width = window_width
@@ -30,11 +33,11 @@ class GameLoop:
         self._event_queue = event_queue
         self._score_tracker = score_tracker
         self._symbol_tracker = symbol_tracker
+        self._db_connection = db_connection
         self._bubble = Bubble(self._symbol_tracker)
         self._buttons = self._list_buttons()
         self._active_button = self._buttons[0]
         self._answer_toggler = pygame.rect.Rect(1000, 0, 200, 40)
-        self._db_connection = DatabaseConnection()
 
     @staticmethod
     def _list_buttons():

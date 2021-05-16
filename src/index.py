@@ -1,5 +1,6 @@
 import pygame
 from gameloop import GameLoop
+from database_connection import DatabaseConnection
 from ui.renderer import Renderer
 from services.event_queue import EventQueue
 from services.score_tracker import ScoreTracker
@@ -11,6 +12,7 @@ BACKGROUND_COLOR = (212, 220, 255)
 symbol_tracker = SymbolTracker()
 MAX_CORRECT_ANSWERS = symbol_tracker.get_nbr_of_remaining_symbols()
 score_tracker = ScoreTracker(MAX_CORRECT_ANSWERS)
+DATABASE_CONNECTION = DatabaseConnection()
 
 
 def main():
@@ -24,7 +26,7 @@ def main():
     renderer = Renderer(window, WINDOW_WIDTH, BACKGROUND_COLOR)
     event_queue = EventQueue()
     loop = GameLoop(window, WINDOW_WIDTH, renderer,
-                    event_queue, score_tracker, symbol_tracker)
+                    event_queue, score_tracker, symbol_tracker, DATABASE_CONNECTION)
 
     pygame.init()
     loop.start()
