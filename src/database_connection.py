@@ -23,8 +23,8 @@ class DatabaseConnection:
             self._connection.execute(
                 "INSERT INTO Scores (nickname,score) VALUES (?, ?);", params)
             self._connection.commit()
-        except e:
-            print("An error occurred when inserting data: ", e)
+        except:
+            print("An error occurred when inserting data")
 
     def fetch_top_scores(self):
         """Fetch five results with the biggest scores from the database.
@@ -38,8 +38,8 @@ class DatabaseConnection:
                 "SELECT nickname,score FROM Scores ORDER BY score DESC LIMIT 5;"
             ).fetchall()
             return top_scores
-        except e:
-            print("An error occurred when fetching score data: ", e)
+        except:
+            print("An error occurred when fetching score data")
             return None
 
     def close_connection(self):
