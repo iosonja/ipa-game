@@ -24,5 +24,5 @@ System testing has been done manually.
 All functionalities defined in the requirements document have been tested either automatically or manually.
 
 ## Remaining Quality Issues
-- There is currently no animation for returning a button back to its starting position.
+- Not enough testing has been done to see how the program handles missing or unexpectedly formatted database. The errors are most likely not handled gracefully.
 - There are parts in gameloop.py that could be separated to a file that wouldn't need to be left out of coverage report.
