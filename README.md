@@ -1,4 +1,4 @@
-# IPA Game [![wakatime](https://wakatime.com/badge/github/iosonja/ot-harjoitustyo.svg)](https://wakatime.com/badge/github/iosonja/ot-harjoitustyo)<br>
+# IPA Game
 IPA Game is a desktop-based game where the player needs to classify items that appear on bubbles floating in a window view.
 The player needs to classify symbols of the International Phonetic Alphabet (IPA).
 The symbols that appear in the game will describe consonants that appear in the English language.
